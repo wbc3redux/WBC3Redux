@@ -1,0 +1,671 @@
+{
+ "evidence": "Read: byte scan of .text against the decompile; nothing executed",
+ "exe_sha256": "77d47d0eff727bdec9845b0cc47e63147f470b6059d379c3f0121dbd5b5689ce",
+ "ids_found": 156,
+ "lost": {
+  "AADC": [
+   {
+    "address": "0x53953e",
+    "function": "0x5377a0",
+    "lost": true
+   },
+   {
+    "address": "0x5397f6",
+    "function": "0x5377a0",
+    "lost": true
+   },
+   {
+    "address": "0x539f5e",
+    "function": "0x539c60",
+    "lost": true
+   }
+  ],
+  "AADE": [
+   {
+    "address": "0x4ceea3",
+    "function": "0x4ce9f0",
+    "lost": true
+   },
+   {
+    "address": "0x523334",
+    "function": "0x523120",
+    "lost": true
+   },
+   {
+    "address": "0x526519",
+    "function": "0x525960",
+    "lost": true
+   }
+  ],
+  "AADG": [
+   {
+    "address": "0x53954c",
+    "function": "0x5377a0",
+    "lost": true
+   },
+   {
+    "address": "0x539804",
+    "function": "0x5377a0",
+    "lost": true
+   },
+   {
+    "address": "0x539f6c",
+    "function": "0x539c60",
+    "lost": true
+   }
+  ],
+  "AADR": [
+   {
+    "address": "0x539526",
+    "function": "0x5377a0",
+    "lost": true
+   },
+   {
+    "address": "0x5397e1",
+    "function": "0x5377a0",
+    "lost": true
+   },
+   {
+    "address": "0x539f49",
+    "function": "0x539c60",
+    "lost": true
+   }
+  ],
+  "AADU": [
+   {
+    "address": "0x539530",
+    "function": "0x5377a0",
+    "lost": true
+   },
+   {
+    "address": "0x5397e8",
+    "function": "0x5377a0",
+    "lost": true
+   },
+   {
+    "address": "0x539f50",
+    "function": "0x539c60",
+    "lost": true
+   }
+  ],
+  "AAEA": [
+   {
+    "address": "0x523954",
+    "function": "0x523120",
+    "lost": true
+   }
+  ],
+  "AEXX": [
+   {
+    "address": "0x526553",
+    "function": "0x525960",
+    "lost": true
+   }
+  ],
+  "AFGX": [
+   {
+    "address": "0x52395c",
+    "function": "0x523120",
+    "lost": true
+   }
+  ],
+  "AFNX": [
+   {
+    "address": "0x5299f0",
+    "function": "0x529970",
+    "lost": true
+   }
+  ],
+  "AGCY": [
+   {
+    "address": "0x52397c",
+    "function": "0x523120",
+    "lost": true
+   }
+  ],
+  "AGGX": [
+   {
+    "address": "0x438576",
+    "function": "0x4382d0",
+    "lost": true
+   }
+  ],
+  "AGHY": [
+   {
+    "address": "0x52396c",
+    "function": "0x523120",
+    "lost": true
+   }
+  ],
+  "AGPY": [
+   {
+    "address": "0x523974",
+    "function": "0x523120",
+    "lost": true
+   }
+  ],
+  "AGSP": [
+   {
+    "address": "0x523254",
+    "function": "0x523120",
+    "lost": true
+   }
+  ],
+  "ALBX": [
+   {
+    "address": "0x525c1e",
+    "function": "0x525960",
+    "lost": true
+   }
+  ],
+  "BPOW": [
+   {
+    "address": "0x53c0e4",
+    "function": "0x53bf10",
+    "lost": true
+   }
+  ],
+  "BPTM": [
+   {
+    "address": "0x53c0eb",
+    "function": "0x53bf10",
+    "lost": true
+   }
+  ],
+  "BWE0": [
+   {
+    "address": "0x422e2e",
+    "function": "0x421180",
+    "lost": true
+   },
+   {
+    "address": "0x424f29",
+    "function": "0x421180",
+    "lost": true
+   },
+   {
+    "address": "0x4a5435",
+    "function": "0x4a50f0",
+    "lost": true
+   },
+   {
+    "address": "0x4a5474",
+    "function": "0x4a50f0",
+    "lost": true
+   }
+  ],
+  "BWE1": [
+   {
+    "address": "0x422e35",
+    "function": "0x421180",
+    "lost": true
+   },
+   {
+    "address": "0x424f30",
+    "function": "0x421180",
+    "lost": true
+   },
+   {
+    "address": "0x4a54ab",
+    "function": "0x4a50f0",
+    "lost": true
+   },
+   {
+    "address": "0x4a54e8",
+    "function": "0x4a50f0",
+    "lost": true
+   }
+  ],
+  "BWE2": [
+   {
+    "address": "0x422e3c",
+    "function": "0x421180",
+    "lost": true
+   },
+   {
+    "address": "0x424f37",
+    "function": "0x421180",
+    "lost": true
+   },
+   {
+    "address": "0x4a551b",
+    "function": "0x4a50f0",
+    "lost": true
+   },
+   {
+    "address": "0x4a5558",
+    "function": "0x4a50f0",
+    "lost": true
+   }
+  ],
+  "BWN0": [
+   {
+    "address": "0x422e19",
+    "function": "0x421180",
+    "lost": true
+   },
+   {
+    "address": "0x424f14",
+    "function": "0x421180",
+    "lost": true
+   },
+   {
+    "address": "0x4a542d",
+    "function": "0x4a50f0",
+    "lost": true
+   },
+   {
+    "address": "0x4a546d",
+    "function": "0x4a50f0",
+    "lost": true
+   }
+  ],
+  "BWN1": [
+   {
+    "address": "0x422e20",
+    "function": "0x421180",
+    "lost": true
+   },
+   {
+    "address": "0x424f1b",
+    "function": "0x421180",
+    "lost": true
+   },
+   {
+    "address": "0x4a54a3",
+    "function": "0x4a50f0",
+    "lost": true
+   },
+   {
+    "address": "0x4a54e1",
+    "function": "0x4a50f0",
+    "lost": true
+   }
+  ],
+  "BWN2": [
+   {
+    "address": "0x422e27",
+    "function": "0x421180",
+    "lost": true
+   },
+   {
+    "address": "0x424f22",
+    "function": "0x421180",
+    "lost": true
+   },
+   {
+    "address": "0x4a5513",
+    "function": "0x4a50f0",
+    "lost": true
+   },
+   {
+    "address": "0x4a5551",
+    "function": "0x4a50f0",
+    "lost": true
+   }
+  ],
+  "BWRA": [
+   {
+    "address": "0x422e43",
+    "function": "0x421180",
+    "lost": true
+   },
+   {
+    "address": "0x424f3e",
+    "function": "0x421180",
+    "lost": true
+   }
+  ],
+  "BWTF": [
+   {
+    "address": "0x4a5153",
+    "function": "0x4a50f0",
+    "lost": true
+   },
+   {
+    "address": "0x4a5202",
+    "function": "0x4a50f0",
+    "lost": true
+   }
+  ],
+  "BWTG": [
+   {
+    "address": "0x4a516b",
+    "function": "0x4a50f0",
+    "lost": true
+   },
+   {
+    "address": "0x4a522c",
+    "function": "0x4a50f0",
+    "lost": true
+   }
+  ],
+  "BWTL": [
+   {
+    "address": "0x4a5173",
+    "function": "0x4a50f0",
+    "lost": true
+   },
+   {
+    "address": "0x4a5225",
+    "function": "0x4a50f0",
+    "lost": true
+   }
+  ],
+  "PCON": [
+   {
+    "address": "0x525c29",
+    "function": "0x525960",
+    "lost": true
+   }
+  ],
+  "PFAR": [
+   {
+    "address": "0x44812d",
+    "function": "0x446150",
+    "lost": true
+   }
+  ],
+  "PFFI": [
+   {
+    "address": "0x52655e",
+    "function": "0x525960",
+    "lost": true
+   }
+  ]
+ },
+ "lost_by_preceding_function": {
+  "0x421180": [
+   "BWE0",
+   "BWE1",
+   "BWE2",
+   "BWN0",
+   "BWN1",
+   "BWN2",
+   "BWRA"
+  ],
+  "0x4382d0": [
+   "AGGX"
+  ],
+  "0x446150": [
+   "PFAR"
+  ],
+  "0x4a50f0": [
+   "BWE0",
+   "BWE1",
+   "BWE2",
+   "BWN0",
+   "BWN1",
+   "BWN2",
+   "BWTF",
+   "BWTG",
+   "BWTL"
+  ],
+  "0x4ce9f0": [
+   "AADE"
+  ],
+  "0x523120": [
+   "AADE",
+   "AAEA",
+   "AFGX",
+   "AGCY",
+   "AGHY",
+   "AGPY",
+   "AGSP"
+  ],
+  "0x525960": [
+   "AADE",
+   "AEXX",
+   "ALBX",
+   "PCON",
+   "PFFI"
+  ],
+  "0x529970": [
+   "AFNX"
+  ],
+  "0x5377a0": [
+   "AADC",
+   "AADG",
+   "AADR",
+   "AADU"
+  ],
+  "0x539c60": [
+   "AADC",
+   "AADG",
+   "AADR",
+   "AADU"
+  ],
+  "0x53bf10": [
+   "BPOW",
+   "BPTM"
+  ]
+ },
+ "occurrences": 596,
+ "races": {
+  "Fey": [
+   "AAAR",
+   "AADC",
+   "AADE",
+   "AADG",
+   "AAEA",
+   "AAEE",
+   "AAEF",
+   "AAEW",
+   "AALH",
+   "AAPE",
+   "AASP",
+   "AEDX",
+   "AEXX",
+   "AFBX",
+   "AFGX",
+   "AFHX",
+   "AFIX",
+   "AFJX",
+   "AFMX",
+   "AFNX",
+   "ALGX",
+   "ATFX",
+   "BAN0",
+   "BAN1",
+   "BAN2",
+   "BAUG",
+   "BKF0",
+   "BKF1",
+   "BKF2",
+   "BKF3",
+   "BKF4",
+   "BPFR",
+   "BPMP",
+   "BPOW",
+   "BPRB",
+   "BPTM",
+   "BTCE",
+   "BTDR",
+   "BTEL",
+   "BTIN",
+   "BWN0",
+   "BWN1",
+   "BWN2",
+   "BWRA",
+   "BWTF",
+   "PFAR",
+   "PFBL",
+   "PFFI",
+   "PFKN",
+   "PFSI",
+   "PIB0",
+   "PIB1",
+   "PIB2",
+   "PIB3",
+   "PLO0",
+   "PLO1",
+   "PLO2",
+   "PLO3",
+   "PLO4",
+   "PLO5",
+   "PLO6",
+   "PLO7",
+   "PLO8",
+   "PME0",
+   "PME1",
+   "PMR0",
+   "PMR1",
+   "PPA0",
+   "PPA1",
+   "PRA0",
+   "PRA1",
+   "PRA2",
+   "PUNI",
+   "PZE0",
+   "PZE1",
+   "PZE2"
+  ],
+  "Plaguelord": [
+   "AAAR",
+   "AADE",
+   "AADF",
+   "AADG",
+   "AADU",
+   "AAEA",
+   "AAEE",
+   "AAEF",
+   "AAEW",
+   "AAWY",
+   "AGCY",
+   "AGFL",
+   "AGGX",
+   "AGGZ",
+   "AGHY",
+   "AGPC",
+   "AGPY",
+   "AGSL",
+   "AGSP",
+   "AHH1",
+   "ALGX",
+   "ASBC",
+   "ATGX",
+   "AUBX",
+   "BACP",
+   "BAE0",
+   "BAE1",
+   "BAE2",
+   "BATE",
+   "BKG0",
+   "BKG1",
+   "BKG2",
+   "BKG3",
+   "BKG4",
+   "BPFC",
+   "BPHC",
+   "BPIC",
+   "BPLB",
+   "BPPP",
+   "BPPS",
+   "BPSP",
+   "BTCE",
+   "BTDR",
+   "BTEL",
+   "BTIN",
+   "BWE0",
+   "BWE1",
+   "BWE2",
+   "BWRA",
+   "BWTG",
+   "PAC0",
+   "PAC1",
+   "PAC2",
+   "PANO",
+   "PCN0",
+   "PCN1",
+   "PCN2",
+   "PCN3",
+   "PCN4",
+   "PFV0",
+   "PFV1",
+   "PFV2",
+   "PMR0",
+   "PMR1",
+   "PMR2",
+   "PMU0",
+   "PMU1",
+   "PMU2",
+   "PSPO",
+   "PVI0",
+   "PVI1",
+   "PVI2",
+   "PVI3",
+   "PVI4",
+   "PVI5"
+  ],
+  "Ssrathi": [
+   "AAAR",
+   "AADE",
+   "AADF",
+   "AADG",
+   "AADR",
+   "AAEA",
+   "AAEE",
+   "AAEF",
+   "AAEW",
+   "AAPT",
+   "ALBX",
+   "ALCX",
+   "ALDX",
+   "ALEX",
+   "ALGX",
+   "ALHX",
+   "ALIX",
+   "ALMX",
+   "ATLX",
+   "BAKS",
+   "BAN0",
+   "BAN1",
+   "BAN2",
+   "BARS",
+   "BAWS",
+   "BKL0",
+   "BKL1",
+   "BKL2",
+   "BKL3",
+   "BKL4",
+   "BPCP",
+   "BPHA",
+   "BPLP",
+   "BPYP",
+   "BTCE",
+   "BTDR",
+   "BTEL",
+   "BTIN",
+   "BWN0",
+   "BWN1",
+   "BWN2",
+   "BWRA",
+   "BWTL",
+   "PBLE",
+   "PCFA",
+   "PCON",
+   "PCWR",
+   "PDEF",
+   "PFAR",
+   "PMLK",
+   "PMR0",
+   "PMR1",
+   "PMR2",
+   "PPC0",
+   "PPC1",
+   "PPC2",
+   "PRA0",
+   "PRA1",
+   "PRA2",
+   "PROD",
+   "PRR0",
+   "PRR1",
+   "PRR2",
+   "PSP0",
+   "PSP1",
+   "PSP2",
+   "PWRM"
+  ]
+ },
+ "schema": 1
+}

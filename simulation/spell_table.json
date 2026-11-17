@@ -1,0 +1,577 @@
+{
+ "cases": {
+  "0": {
+   "ability": "Heal Group",
+   "casters": [
+    "AHGW",
+    "AEDX"
+   ],
+   "command_check": null,
+   "key": "H",
+   "mana": 40
+  },
+  "1": {
+   "ability": "Call Lightning",
+   "casters": [
+    "AONX",
+    "AWNX"
+   ],
+   "command_check": null,
+   "key": "L",
+   "mana": 40
+  },
+  "10": {
+   "ability": "Hand of Ice",
+   "casters": [
+    "AHGB",
+    "AEOX"
+   ],
+   "command_check": null,
+   "key": "X",
+   "mana": 20
+  },
+  "11": {
+   "ability": "Cure",
+   "casters": [
+    "AHGW",
+    "AEDX",
+    "AAAR"
+   ],
+   "command_check": null,
+   "key": "U",
+   "mana": 30
+  },
+  "12": {
+   "ability": "Entangle",
+   "casters": [
+    "AWJX",
+    "AWKX"
+   ],
+   "command_check": null,
+   "key": "E",
+   "mana": 20
+  },
+  "13": {
+   "ability": "Invisibility",
+   "casters": [
+    "AKGX",
+    "ASWM"
+   ],
+   "command_check": null,
+   "key": "V",
+   "mana": 35
+  },
+  "14": {
+   "ability": "Berserker",
+   "casters": [
+    "AONX",
+    "AMMX"
+   ],
+   "command_check": null,
+   "key": "B",
+   "mana": 25
+  },
+  "17": {
+   "ability": "Multi-Target",
+   "casters": [
+    "AEGX",
+    "ASSC"
+   ],
+   "command_check": null,
+   "key": "T",
+   "mana": 25
+  },
+  "18": {
+   "ability": "Resist Fire",
+   "casters": [
+    "AHGR"
+   ],
+   "command_check": null,
+   "key": "J",
+   "mana": 30
+  },
+  "2": {
+   "ability": "Ring of Fire",
+   "casters": [
+    "AHGR",
+    "AMMX",
+    "ARGX"
+   ],
+   "command_check": null,
+   "key": "F",
+   "mana": 40
+  },
+  "21": {
+   "ability": "Summon Imp",
+   "casters": [
+    "AADE"
+   ],
+   "command_check": "AAIM",
+   "key": "I",
+   "mana": 40
+  },
+  "22": {
+   "ability": "Daemongate",
+   "casters": [
+    "AVGX"
+   ],
+   "command_check": "AADE",
+   "key": "D",
+   "mana": 100
+  },
+  "23": {
+   "ability": "Banish",
+   "casters": [
+    "AVGX"
+   ],
+   "command_check": null,
+   "key": "B",
+   "mana": 30
+  },
+  "24": {
+   "ability": "Earthpower",
+   "casters": [
+    "AABX"
+   ],
+   "command_check": null,
+   "key": "E",
+   "mana": 40
+  },
+  "26": {
+   "ability": "Salvage",
+   "casters": [
+    "AAGX"
+   ],
+   "command_check": null,
+   "key": "Z",
+   "mana": 0
+  },
+  "27": {
+   "ability": "Doomstones",
+   "casters": [
+    "ADOX"
+   ],
+   "command_check": null,
+   "key": "D",
+   "mana": 40
+  },
+  "28": {
+   "ability": "Stonecall",
+   "casters": [
+    "ADOX"
+   ],
+   "command_check": "AAEE",
+   "key": "S",
+   "mana": 100
+  },
+  "29": {
+   "ability": "Vampire bats",
+   "casters": [
+    "AUGX"
+   ],
+   "command_check": "AABA",
+   "key": "B",
+   "mana": 40
+  },
+  "3": {
+   "ability": "Ring of Ice",
+   "casters": [
+    "AENX"
+   ],
+   "command_check": null,
+   "key": "I",
+   "mana": 50
+  },
+  "30": {
+   "ability": "Scare",
+   "casters": [
+    "AFGX"
+   ],
+   "command_check": null,
+   "key": "S",
+   "mana": 40
+  },
+  "32": {
+   "ability": "Eye of Oros",
+   "casters": [
+    "AGGX"
+   ],
+   "command_check": null,
+   "key": "E",
+   "mana": 30
+  },
+  "33": {
+   "ability": "Plague Cloud",
+   "casters": [
+    "AGGX"
+   ],
+   "command_check": null,
+   "key": "P",
+   "mana": 55
+  },
+  "34": {
+   "ability": "Chaos Plague",
+   "casters": [
+    "BKG4",
+    "BKG3",
+    "BKG2",
+    "BKG1",
+    "BKG0"
+   ],
+   "command_check": null,
+   "key": "C",
+   "mana": 0
+  },
+  "35": {
+   "ability": "Firebomb",
+   "casters": [
+    "AAJX"
+   ],
+   "command_check": null,
+   "key": "F",
+   "mana": 35
+  },
+  "36": {
+   "ability": "Couatl's Wrath",
+   "casters": [
+    "BKL4",
+    "BKL3",
+    "BKL2",
+    "BKL1",
+    "BKL0"
+   ],
+   "command_check": null,
+   "key": "W",
+   "mana": 0
+  },
+  "37": {
+   "ability": "Poison Cloud",
+   "casters": [
+    "ALMX"
+   ],
+   "command_check": null,
+   "key": "P",
+   "mana": 25
+  },
+  "38": {
+   "ability": "Naga -1",
+   "casters": [
+    "ALGX"
+   ],
+   "command_check": null,
+   "key": "S",
+   "mana": 40
+  },
+  "39": {
+   "ability": "Cauterize",
+   "casters": [
+    "ALMX"
+   ],
+   "command_check": null,
+   "key": "C",
+   "mana": 30
+  },
+  "4": {
+   "ability": "Harpy 0x96",
+   "casters": [
+    "AHGB",
+    "AAHA"
+   ],
+   "command_check": null,
+   "key": "M",
+   "mana": 20
+  },
+  "40": {
+   "ability": "Queen Spider",
+   "casters": [
+    "AKOX"
+   ],
+   "command_check": "AKLX",
+   "key": "S",
+   "mana": 45
+  },
+  "41": {
+   "ability": "Fire Elemental",
+   "casters": [
+    "ARGX"
+   ],
+   "command_check": "ARGX",
+   "key": "E",
+   "mana": 100
+  },
+  "43": {
+   "ability": "Goblins",
+   "casters": [
+    "AOKX"
+   ],
+   "command_check": null,
+   "key": "G",
+   "mana": 75
+  },
+  "44": {
+   "ability": "Freeze",
+   "casters": [
+    "AEOX"
+   ],
+   "command_check": null,
+   "key": "F",
+   "mana": 20
+  },
+  "47": {
+   "ability": "Call the Dead",
+   "casters": [
+    "AUMX"
+   ],
+   "command_check": null,
+   "key": "C",
+   "mana": 45
+  },
+  "5": {
+   "ability": "Pillar of Fire",
+   "casters": [
+    "AKNX",
+    "AMMX"
+   ],
+   "command_check": null,
+   "key": "P",
+   "mana": 35
+  },
+  "6": {
+   "ability": "Raise Zombie",
+   "casters": [
+    "AKNX"
+   ],
+   "command_check": "AUBX",
+   "key": "Z",
+   "mana": 45
+  },
+  "7": {
+   "ability": "Darkstorm",
+   "casters": [
+    "AKNX"
+   ],
+   "command_check": null,
+   "key": "N",
+   "mana": 40
+  },
+  "8": {
+   "ability": "White Ward",
+   "casters": [
+    "AENX"
+   ],
+   "command_check": null,
+   "key": "W",
+   "mana": 25
+  },
+  "9": {
+   "ability": "Light/Darkness",
+   "casters": [
+    "AONX",
+    "AWNX"
+   ],
+   "command_check": null,
+   "key": "Y",
+   "mana": 50
+  }
+ },
+ "cost": [
+  8,
+  8,
+  8,
+  6,
+  15,
+  16,
+  20,
+  40,
+  40,
+  60,
+  10,
+  4,
+  5,
+  3,
+  14,
+  12,
+  20,
+  35,
+  30,
+  55,
+  10,
+  12,
+  8,
+  8,
+  20,
+  8,
+  35,
+  40,
+  25,
+  50,
+  8,
+  6,
+  5,
+  8,
+  14,
+  20,
+  30,
+  30,
+  50,
+  70,
+  8,
+  8,
+  8,
+  15,
+  30,
+  16,
+  35,
+  30,
+  35,
+  65,
+  10,
+  6,
+  8,
+  7,
+  30,
+  30,
+  15,
+  40,
+  40,
+  75,
+  12,
+  15,
+  6,
+  14,
+  24,
+  22,
+  24,
+  40,
+  60,
+  70,
+  12,
+  4,
+  8,
+  12,
+  25,
+  16,
+  24,
+  35,
+  40,
+  50,
+  10,
+  8,
+  14,
+  10,
+  30,
+  25,
+  8,
+  30,
+  40,
+  65,
+  6,
+  8,
+  5,
+  7,
+  12,
+  24,
+  30,
+  55,
+  32,
+  70,
+  6,
+  6,
+  5,
+  10,
+  15,
+  24,
+  30,
+  45,
+  45,
+  50,
+  6,
+  6,
+  5,
+  10,
+  30,
+  35,
+  60,
+  50,
+  60,
+  70,
+  8,
+  12,
+  20,
+  22,
+  24,
+  28,
+  32,
+  40,
+  60,
+  100
+ ],
+ "exe_sha256": "77d47d0eff727bdec9845b0cc47e63147f470b6059d379c3f0121dbd5b5689ce",
+ "keys": [
+  72,
+  76,
+  70,
+  73,
+  77,
+  80,
+  90,
+  78,
+  87,
+  89,
+  88,
+  85,
+  69,
+  86,
+  66,
+  75,
+  83,
+  84,
+  74,
+  79,
+  81,
+  73,
+  68,
+  66,
+  69,
+  90,
+  90,
+  68,
+  83,
+  66,
+  83,
+  80,
+  69,
+  80,
+  67,
+  70,
+  87,
+  80,
+  83,
+  67,
+  83,
+  69,
+  78,
+  71,
+  70,
+  66,
+  87,
+  67
+ ],
+ "mana_computer": [
+  0,
+  0,
+  0,
+  300,
+  400,
+  600,
+  800,
+  500
+ ],
+ "mana_rate": [
+  100,
+  150,
+  200,
+  300
+ ],
+ "source": "tools/emulate_spells.py: tables read from the executable image (cost 0x61b3b0, unit mana rate 0x611220 by Summon Mana level, computer interval term 0x611234 by AI value), the ability keys 0x74c52c as 0x425bf0 sets them (Emulated), the 0x426350 cases (Read)"
+}

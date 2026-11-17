@@ -1,0 +1,301 @@
+{
+ "schema": 1,
+ "exe_sha256": "77d47d0eff727bdec9845b0cc47e63147f470b6059d379c3f0121dbd5b5689ce",
+ "input": "tests/daemon_state_fixtures.json",
+ "samples": [
+  {
+   "t": 120,
+   "player": 0,
+   "port_peasant_priority": 100,
+   "peasant_priority": 100,
+   "keeps": [
+    {
+     "type": "BKV0",
+     "port_candidates": [
+      [
+       "AVBX",
+       110
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AVBX",
+     "choice_last_rolls_30": "AVBX"
+    }
+   ]
+  },
+  {
+   "t": 120,
+   "player": 1,
+   "port_peasant_priority": 100,
+   "peasant_priority": 100,
+   "keeps": [
+    {
+     "type": "BKV0",
+     "port_candidates": [
+      [
+       "AVBX",
+       108
+      ],
+      [
+       "BKV1",
+       200
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AVBX",
+     "choice_last_rolls_30": "AVBX"
+    }
+   ]
+  },
+  {
+   "t": 240,
+   "player": 0,
+   "port_peasant_priority": 57,
+   "peasant_priority": 57,
+   "keeps": [
+    {
+     "type": "BKV1",
+     "port_candidates": [
+      [
+       "AVBX",
+       62
+      ]
+     ],
+     "scored": 0,
+     "choice_equal_dice": "",
+     "choice_last_rolls_30": ""
+    }
+   ]
+  },
+  {
+   "t": 240,
+   "player": 1,
+   "port_peasant_priority": 63,
+   "peasant_priority": 63,
+   "keeps": [
+    {
+     "type": "BKV1",
+     "port_candidates": [
+      [
+       "AVBX",
+       65
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AVBX",
+     "choice_last_rolls_30": "AVBX"
+    },
+    {
+     "type": "BKV1",
+     "port_candidates": [
+      [
+       "AVBX",
+       65
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AVBX",
+     "choice_last_rolls_30": "AVBX"
+    }
+   ]
+  },
+  {
+   "t": 360,
+   "player": 0,
+   "port_peasant_priority": 64,
+   "peasant_priority": 64,
+   "keeps": [
+    {
+     "type": "BKV1",
+     "port_candidates": [
+      [
+       "AVBX",
+       84
+      ]
+     ],
+     "scored": 0,
+     "choice_equal_dice": "",
+     "choice_last_rolls_30": ""
+    }
+   ]
+  },
+  {
+   "t": 360,
+   "player": 1,
+   "port_peasant_priority": 63,
+   "peasant_priority": 63,
+   "keeps": [
+    {
+     "type": "BKV1",
+     "port_candidates": [
+      [
+       "AVBX",
+       77
+      ],
+      [
+       "BKV2",
+       200
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "BKV2",
+     "choice_last_rolls_30": "BKV2"
+    },
+    {
+     "type": "BKV1",
+     "port_candidates": [
+      [
+       "AVBX",
+       77
+      ],
+      [
+       "BKV2",
+       200
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "BKV2",
+     "choice_last_rolls_30": "BKV2"
+    }
+   ]
+  },
+  {
+   "t": 480,
+   "player": 0,
+   "port_peasant_priority": 61,
+   "peasant_priority": 61,
+   "keeps": [
+    {
+     "type": "BKV1",
+     "port_candidates": [
+      [
+       "AVBX",
+       75
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AVBX",
+     "choice_last_rolls_30": "AVBX"
+    }
+   ]
+  },
+  {
+   "t": 480,
+   "player": 1,
+   "port_peasant_priority": 69,
+   "peasant_priority": 69,
+   "keeps": [
+    {
+     "type": "BKV2",
+     "port_candidates": [
+      [
+       "AVBX",
+       79
+      ],
+      [
+       "BKV3",
+       200
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AVBX",
+     "choice_last_rolls_30": "AVBX"
+    },
+    {
+     "type": "BKV2",
+     "port_candidates": [
+      [
+       "AVBX",
+       79
+      ],
+      [
+       "BKV3",
+       200
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AVBX",
+     "choice_last_rolls_30": "AVBX"
+    }
+   ]
+  },
+  {
+   "t": 600,
+   "player": 0,
+   "port_peasant_priority": 0,
+   "peasant_priority": 0,
+   "keeps": []
+  },
+  {
+   "t": 600,
+   "player": 1,
+   "port_peasant_priority": 71,
+   "peasant_priority": 71,
+   "keeps": [
+    {
+     "type": "BKV3",
+     "port_candidates": [
+      [
+       "AVBX",
+       81
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AVBX",
+     "choice_last_rolls_30": "AVBX"
+    },
+    {
+     "type": "BKV2",
+     "port_candidates": [
+      [
+       "AVBX",
+       81
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AVBX",
+     "choice_last_rolls_30": "AVBX"
+    }
+   ]
+  },
+  {
+   "t": 720,
+   "player": 0,
+   "port_peasant_priority": 0,
+   "peasant_priority": 0,
+   "keeps": []
+  },
+  {
+   "t": 720,
+   "player": 1,
+   "port_peasant_priority": 100,
+   "peasant_priority": 100,
+   "keeps": [
+    {
+     "type": "BKV3",
+     "port_candidates": [
+      [
+       "AVBX",
+       138
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "BKV4",
+     "choice_last_rolls_30": "BKV4"
+    },
+    {
+     "type": "BKV2",
+     "port_candidates": [
+      [
+       "AVBX",
+       138
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AVBX",
+     "choice_last_rolls_30": "AVBX"
+    }
+   ]
+  }
+ ]
+}

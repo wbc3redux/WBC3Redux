@@ -1,0 +1,680 @@
+{
+ "codes": {
+  "EARC": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    7,
+    64,
+    4,
+    1,
+    3,
+    1,
+    8,
+    2,
+    0,
+    1,
+    4,
+    0,
+    -30,
+    0,
+    2
+   ]
+  },
+  "EBLS": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EZ21",
+   "words": [
+    7,
+    32,
+    1,
+    2,
+    4,
+    1,
+    5,
+    2,
+    0,
+    1,
+    5,
+    0,
+    -40,
+    0,
+    2
+   ]
+  },
+  "ECHC": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    9,
+    2,
+    4,
+    1,
+    1,
+    1,
+    4,
+    2,
+    0,
+    1,
+    20,
+    0,
+    0,
+    0,
+    2
+   ]
+  },
+  "ECHE": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    9,
+    2,
+    4,
+    1,
+    0,
+    1,
+    1,
+    4,
+    0,
+    1,
+    20,
+    0,
+    0,
+    0,
+    7
+   ]
+  },
+  "ECHW": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    9,
+    2,
+    4,
+    2,
+    1,
+    1,
+    4,
+    2,
+    0,
+    1,
+    20,
+    0,
+    0,
+    0,
+    7
+   ]
+  },
+  "ECOM": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    7,
+    64,
+    1,
+    1,
+    3,
+    0,
+    8,
+    2,
+    0,
+    1,
+    4,
+    0,
+    -30,
+    0,
+    2
+   ]
+  },
+  "EDVC": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    12,
+    32,
+    4,
+    1,
+    3,
+    0,
+    5,
+    2,
+    0,
+    1,
+    20,
+    0,
+    0,
+    0,
+    2
+   ]
+  },
+  "EIAR": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    6,
+    16,
+    1,
+    1,
+    1,
+    0,
+    4,
+    2,
+    0,
+    0,
+    4,
+    0,
+    -36,
+    0,
+    1
+   ]
+  },
+  "EIFM": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    4,
+    16,
+    4,
+    1,
+    0,
+    1,
+    1,
+    2,
+    0,
+    1,
+    5,
+    0,
+    -35,
+    0,
+    2
+   ]
+  },
+  "EILE": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    6,
+    2,
+    2,
+    1,
+    0,
+    1,
+    1,
+    2,
+    0,
+    1,
+    100,
+    0,
+    0,
+    0,
+    4
+   ]
+  },
+  "EILU": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    6,
+    16,
+    2,
+    1,
+    0,
+    1,
+    1,
+    2,
+    0,
+    1,
+    100,
+    0,
+    0,
+    0,
+    4
+   ]
+  },
+  "EIMM": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    7,
+    1,
+    1,
+    2,
+    2,
+    1,
+    5,
+    2,
+    0,
+    1,
+    5,
+    0,
+    -40,
+    0,
+    2
+   ]
+  },
+  "EISP": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    12,
+    16,
+    2,
+    1,
+    4,
+    1,
+    10,
+    2,
+    0,
+    1,
+    100,
+    0,
+    0,
+    0,
+    4
+   ]
+  },
+  "EIST": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    12,
+    16,
+    2,
+    2,
+    1,
+    2,
+    4,
+    1,
+    4,
+    2,
+    20,
+    0,
+    -5,
+    0,
+    6
+   ]
+  },
+  "EMIF": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    6,
+    16,
+    2,
+    1,
+    4,
+    0,
+    10,
+    2,
+    0,
+    1,
+    5,
+    0,
+    0,
+    0,
+    -2
+   ]
+  },
+  "EMLE": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    1,
+    4,
+    4,
+    1,
+    1,
+    0,
+    6,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  "EPGA": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    7,
+    4,
+    2,
+    4,
+    0,
+    0,
+    1,
+    2,
+    0,
+    1,
+    5,
+    0,
+    -40,
+    0,
+    2
+   ]
+  },
+  "EPOC": {
+   "bytes_1e": [
+    1,
+    3,
+    0,
+    0
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    9,
+    4,
+    4,
+    1,
+    1,
+    1,
+    4,
+    2,
+    0,
+    1,
+    20,
+    0,
+    0,
+    0,
+    2
+   ]
+  },
+  "ERUC": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    5,
+    1,
+    2,
+    2,
+    4,
+    1,
+    10,
+    1,
+    0,
+    1,
+    50,
+    0,
+    0,
+    0,
+    2
+   ]
+  },
+  "ESIV": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    7,
+    64,
+    4,
+    1,
+    3,
+    0,
+    6,
+    2,
+    0,
+    1,
+    10,
+    0,
+    -30,
+    0,
+    2
+   ]
+  },
+  "ESMR": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    5,
+    1,
+    4,
+    2,
+    3,
+    1,
+    10,
+    2,
+    3,
+    1,
+    100,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  "ESMX": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    5,
+    1,
+    4,
+    2,
+    3,
+    1,
+    10,
+    2,
+    3,
+    1,
+    100,
+    0,
+    0,
+    0,
+    4
+   ]
+  },
+  "ESSP": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    4,
+    32,
+    4,
+    2,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    100,
+    0,
+    0,
+    0,
+    4
+   ]
+  },
+  "ESVT": {
+   "bytes_1e": [
+    0,
+    null,
+    null,
+    null
+   ],
+   "emitter": 1,
+   "host": "EDUM",
+   "words": [
+    1,
+    4,
+    4,
+    1,
+    1,
+    0,
+    6,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  "EZ01": {
+   "bytes_1e": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "emitter": 0,
+   "host": "EZ01",
+   "words": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  }
+ },
+ "source": "0x40ebd0 (Unicorn, unmodified executable)"
+}

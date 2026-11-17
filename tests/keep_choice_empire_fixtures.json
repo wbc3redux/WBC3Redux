@@ -1,0 +1,287 @@
+{
+ "schema": 1,
+ "exe_sha256": "77d47d0eff727bdec9845b0cc47e63147f470b6059d379c3f0121dbd5b5689ce",
+ "input": "tests/empire_state_fixtures.json",
+ "samples": [
+  {
+   "t": 120,
+   "player": 2,
+   "port_peasant_priority": 100,
+   "peasant_priority": 100,
+   "keeps": [
+    {
+     "type": "BKP0",
+     "port_candidates": [
+      [
+       "AHBX",
+       117
+      ],
+      [
+       "PPGU",
+       50
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AHBX",
+     "choice_last_rolls_30": "AHBX"
+    }
+   ]
+  },
+  {
+   "t": 180,
+   "player": 2,
+   "port_peasant_priority": 100,
+   "peasant_priority": 100,
+   "keeps": [
+    {
+     "type": "BKP0",
+     "port_candidates": [
+      [
+       "AHBX",
+       150
+      ],
+      [
+       "PPGU",
+       50
+      ]
+     ],
+     "scored": 0,
+     "choice_equal_dice": "",
+     "choice_last_rolls_30": ""
+    }
+   ]
+  },
+  {
+   "t": 240,
+   "player": 2,
+   "port_peasant_priority": 100,
+   "peasant_priority": 100,
+   "keeps": [
+    {
+     "type": "BKP0",
+     "port_candidates": [
+      [
+       "BKP1",
+       200
+      ],
+      [
+       "AHBX",
+       119
+      ],
+      [
+       "PPGU",
+       50
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AHBX",
+     "choice_last_rolls_30": "AHBX"
+    }
+   ]
+  },
+  {
+   "t": 300,
+   "player": 2,
+   "port_peasant_priority": 100,
+   "peasant_priority": 100,
+   "keeps": [
+    {
+     "type": "BKP0",
+     "port_candidates": [
+      [
+       "AHBX",
+       127
+      ],
+      [
+       "PPGU",
+       50
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AHBX",
+     "choice_last_rolls_30": "AHBX"
+    }
+   ]
+  },
+  {
+   "t": 360,
+   "player": 2,
+   "port_peasant_priority": 100,
+   "peasant_priority": 100,
+   "keeps": [
+    {
+     "type": "BKP1",
+     "port_candidates": [
+      [
+       "AHBX",
+       185
+      ],
+      [
+       "PPGU",
+       50
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "PPGU",
+     "choice_last_rolls_30": "PPGU"
+    }
+   ]
+  },
+  {
+   "t": 420,
+   "player": 2,
+   "port_peasant_priority": 100,
+   "peasant_priority": 100,
+   "keeps": [
+    {
+     "type": "BKP1",
+     "port_candidates": [
+      [
+       "BKP2",
+       200
+      ],
+      [
+       "AHBX",
+       107
+      ],
+      [
+       "PPGU",
+       50
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AHBX",
+     "choice_last_rolls_30": "AHBX"
+    }
+   ]
+  },
+  {
+   "t": 480,
+   "player": 2,
+   "port_peasant_priority": 69,
+   "peasant_priority": 69,
+   "keeps": [
+    {
+     "type": "BKP1",
+     "port_candidates": [
+      [
+       "BKP2",
+       200
+      ],
+      [
+       "AHBX",
+       84
+      ],
+      [
+       "PPGU",
+       50
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AHBX",
+     "choice_last_rolls_30": "AHBX"
+    }
+   ]
+  },
+  {
+   "t": 540,
+   "player": 2,
+   "port_peasant_priority": 100,
+   "peasant_priority": 100,
+   "keeps": [
+    {
+     "type": "BKP1",
+     "port_candidates": [
+      [
+       "BKP2",
+       200
+      ],
+      [
+       "AHBX",
+       123
+      ],
+      [
+       "PPGU",
+       50
+      ]
+     ],
+     "scored": 3,
+     "choice_equal_dice": "BKP2",
+     "choice_last_rolls_30": "BKP2"
+    }
+   ]
+  },
+  {
+   "t": 600,
+   "player": 2,
+   "port_peasant_priority": 100,
+   "peasant_priority": 100,
+   "keeps": [
+    {
+     "type": "BKP1",
+     "port_candidates": [
+      [
+       "AHBX",
+       182
+      ],
+      [
+       "PPGU",
+       50
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AHBX",
+     "choice_last_rolls_30": "AHBX"
+    }
+   ]
+  },
+  {
+   "t": 660,
+   "player": 2,
+   "port_peasant_priority": 100,
+   "peasant_priority": 100,
+   "keeps": [
+    {
+     "type": "BKP2",
+     "port_candidates": [
+      [
+       "AHBX",
+       103
+      ],
+      [
+       "PPGU",
+       50
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AHBX",
+     "choice_last_rolls_30": "AHBX"
+    }
+   ]
+  },
+  {
+   "t": 720,
+   "player": 2,
+   "port_peasant_priority": 100,
+   "peasant_priority": 100,
+   "keeps": [
+    {
+     "type": "BKP2",
+     "port_candidates": [
+      [
+       "AHBX",
+       111
+      ],
+      [
+       "PPGU",
+       50
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AHBX",
+     "choice_last_rolls_30": "AHBX"
+    }
+   ]
+  }
+ ]
+}

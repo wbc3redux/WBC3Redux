@@ -1,0 +1,697 @@
+{
+ "source": "tools/emulate_hero_creation.py: PNL_CREATEHERO (0x54b040) defaults per race (0x54bee0: portrait 0x54f230, art table, voice 0x54f1d0 English) and the droplists / Customize lists read from the image",
+ "exe_sha256": "77d47d0eff727bdec9845b0cc47e63147f470b6059d379c3f0121dbd5b5689ce",
+ "race_droplist": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15
+ ],
+ "class_droplist": [
+  23,
+  19,
+  7,
+  8,
+  1,
+  5,
+  3,
+  18,
+  4,
+  14,
+  17,
+  13,
+  25,
+  24,
+  26,
+  9,
+  20,
+  12,
+  10,
+  21,
+  2,
+  15,
+  27,
+  16,
+  22,
+  6,
+  11,
+  0
+ ],
+ "defaults": {
+  "0": {
+   "portrait": 0,
+   "art": "AHHX",
+   "voice": "AHHX"
+  },
+  "1": {
+   "portrait": 1,
+   "art": "ADHX",
+   "voice": "ADHX"
+  },
+  "2": {
+   "portrait": 2,
+   "art": "AUHX",
+   "voice": "AUHX"
+  },
+  "3": {
+   "portrait": 3,
+   "art": "AMHX",
+   "voice": "AMHX"
+  },
+  "4": {
+   "portrait": 4,
+   "art": "ABHX",
+   "voice": "ABHX"
+  },
+  "5": {
+   "portrait": 5,
+   "art": "AOHX",
+   "voice": "AOHX"
+  },
+  "6": {
+   "portrait": 6,
+   "art": "AEHX",
+   "voice": "AEHX"
+  },
+  "7": {
+   "portrait": 7,
+   "art": "AWHX",
+   "voice": "AWHX"
+  },
+  "8": {
+   "portrait": 8,
+   "art": "AKHX",
+   "voice": "AKHX"
+  },
+  "9": {
+   "portrait": 9,
+   "art": "AFHX",
+   "voice": "AFHX"
+  },
+  "10": {
+   "portrait": 10,
+   "art": "AAHX",
+   "voice": "AAHX"
+  },
+  "11": {
+   "portrait": 11,
+   "art": "AVHX",
+   "voice": "AVHX"
+  },
+  "12": {
+   "portrait": 27,
+   "art": "APHX",
+   "voice": "AXH2"
+  },
+  "13": {
+   "portrait": 13,
+   "art": "ALHX",
+   "voice": "AXH0"
+  },
+  "14": {
+   "portrait": 14,
+   "art": "ARHX",
+   "voice": "AUHX"
+  },
+  "15": {
+   "portrait": 15,
+   "art": "AHH1",
+   "voice": "AXH5"
+  }
+ },
+ "races": [
+  {
+   "race": 0,
+   "portraits": [
+    0,
+    21,
+    29,
+    30,
+    33,
+    36,
+    37,
+    38,
+    40,
+    43,
+    45,
+    48,
+    49,
+    51,
+    57,
+    58,
+    72,
+    74,
+    85,
+    87,
+    17,
+    27,
+    46
+   ],
+   "voices_english": [
+    "AHHX",
+    "AXH3",
+    "AFHX",
+    "AEHX",
+    "AWHX",
+    "AXH0",
+    "AXH2"
+   ],
+   "voices_other_languages": [
+    "AHHX",
+    "AFHX",
+    "AEHX",
+    "AWHX"
+   ],
+   "art": [
+    "AHHX",
+    "AFHX",
+    "AHH0",
+    "AHH1",
+    "AEHX"
+   ]
+  },
+  {
+   "race": 1,
+   "portraits": [
+    1,
+    20,
+    25,
+    32,
+    33,
+    37,
+    58,
+    64,
+    65,
+    66,
+    67,
+    77
+   ],
+   "voices_english": [
+    "ADHX",
+    "AAHX",
+    "AXH1",
+    "AHHX",
+    "AXH0"
+   ],
+   "voices_other_languages": [
+    "ADHX",
+    "AAHX",
+    "AHHX"
+   ],
+   "art": [
+    "ADHX",
+    "AAHX"
+   ]
+  },
+  {
+   "race": 2,
+   "portraits": [
+    2,
+    34,
+    35,
+    44,
+    45,
+    52,
+    59,
+    76,
+    80,
+    89,
+    31
+   ],
+   "voices_english": [
+    "AUHX",
+    "AXH5",
+    "ABHX",
+    "AOHX",
+    "AKHX",
+    "AVHX",
+    "AXH0",
+    "AXH4",
+    "AXH7"
+   ],
+   "voices_other_languages": [
+    "AUHX",
+    "ABHX",
+    "AOHX",
+    "AKHX",
+    "AVHX"
+   ],
+   "art": [
+    "AUHX",
+    "AKHX",
+    "AHH1"
+   ]
+  },
+  {
+   "race": 3,
+   "portraits": [
+    3,
+    21,
+    23,
+    37,
+    38,
+    42,
+    48,
+    68,
+    71,
+    73,
+    46
+   ],
+   "voices_english": [
+    "AMHX",
+    "AUHX",
+    "ABHX",
+    "AOHX",
+    "AWHX",
+    "AXH0",
+    "AXH6",
+    "AXH7"
+   ],
+   "voices_other_languages": [
+    "AMHX",
+    "AUHX",
+    "ABHX",
+    "AOHX",
+    "AWHX"
+   ],
+   "art": [
+    "AMHX",
+    "AWHX"
+   ]
+  },
+  {
+   "race": 4,
+   "portraits": [
+    4,
+    39,
+    56
+   ],
+   "voices_english": [
+    "ABHX",
+    "AUHX",
+    "AOHX",
+    "AVHX",
+    "AXH0",
+    "AXH7"
+   ],
+   "voices_other_languages": [
+    "ABHX",
+    "AUHX",
+    "AOHX",
+    "AVHX"
+   ],
+   "art": [
+    "ABHX"
+   ]
+  },
+  {
+   "race": 5,
+   "portraits": [
+    5,
+    16,
+    19,
+    41,
+    42,
+    53,
+    78,
+    79
+   ],
+   "voices_english": [
+    "AOHX",
+    "ABHX",
+    "AUHX",
+    "AVHX",
+    "AXH0",
+    "AXH7"
+   ],
+   "voices_other_languages": [
+    "AOHX",
+    "ABHX",
+    "AUHX",
+    "AVHX"
+   ],
+   "art": [
+    "AOHX"
+   ]
+  },
+  {
+   "race": 6,
+   "portraits": [
+    6,
+    17,
+    27,
+    28,
+    46,
+    47,
+    50,
+    60,
+    43,
+    87
+   ],
+   "voices_english": [
+    "AEHX",
+    "AWHX",
+    "AXH2",
+    "AHHX",
+    "AFHX",
+    "AXH3"
+   ],
+   "voices_other_languages": [
+    "AEHX",
+    "AWHX",
+    "AHHX",
+    "AFHX"
+   ],
+   "art": [
+    "AEHX",
+    "AWHX",
+    "AFHX",
+    "AHH0"
+   ]
+  },
+  {
+   "race": 7,
+   "portraits": [
+    7,
+    18,
+    22,
+    28,
+    46,
+    47,
+    50,
+    60,
+    74,
+    21,
+    43
+   ],
+   "voices_english": [
+    "AWHX",
+    "AEHX",
+    "AKHX",
+    "AXH2",
+    "AHHX",
+    "AFHX",
+    "AXH0",
+    "AXH6"
+   ],
+   "voices_other_languages": [
+    "AWHX",
+    "AEHX",
+    "AKHX",
+    "AHHX",
+    "AFHX"
+   ],
+   "art": [
+    "AWHX",
+    "AFHX",
+    "AHH0"
+   ]
+  },
+  {
+   "race": 8,
+   "portraits": [
+    8,
+    24,
+    31,
+    54,
+    55,
+    75,
+    88,
+    89
+   ],
+   "voices_english": [
+    "AKHX",
+    "AXH2",
+    "AUHX",
+    "AWHX",
+    "AVHX",
+    "AXH0",
+    "AXH4"
+   ],
+   "voices_other_languages": [
+    "AKHX",
+    "AUHX",
+    "AWHX",
+    "AVHX"
+   ],
+   "art": [
+    "AKHX",
+    "AUHX"
+   ]
+  },
+  {
+   "race": 9,
+   "portraits": [
+    9,
+    87,
+    61,
+    70,
+    22,
+    28,
+    31,
+    50,
+    54,
+    55,
+    60,
+    74,
+    75
+   ],
+   "voices_english": [
+    "AFHX",
+    "AHHX",
+    "AXH3",
+    "AEHX",
+    "AWHX",
+    "AKHX",
+    "AXH2",
+    "AXH6"
+   ],
+   "voices_other_languages": [
+    "AFHX",
+    "AHHX",
+    "AEHX",
+    "AWHX",
+    "AKHX"
+   ],
+   "art": [
+    "AFHX",
+    "AEHX",
+    "AWHX",
+    "AKHX"
+   ]
+  },
+  {
+   "race": 10,
+   "portraits": [
+    10,
+    20,
+    33,
+    37,
+    40,
+    45,
+    64,
+    65,
+    66,
+    67,
+    77
+   ],
+   "voices_english": [
+    "AAHX",
+    "ADHX",
+    "AXH1",
+    "AUHX",
+    "AVHX",
+    "AXH0"
+   ],
+   "voices_other_languages": [
+    "AAHX",
+    "ADHX",
+    "AUHX",
+    "AVHX"
+   ],
+   "art": [
+    "AAHX",
+    "ADHX"
+   ]
+  },
+  {
+   "race": 11,
+   "portraits": [
+    11,
+    26,
+    45,
+    62,
+    63,
+    69,
+    80
+   ],
+   "voices_english": [
+    "AVHX",
+    "AXH5",
+    "AUHX",
+    "ABHX",
+    "AOHX",
+    "AXH0",
+    "AXH7"
+   ],
+   "voices_other_languages": [
+    "AVHX",
+    "AUHX",
+    "ABHX",
+    "AOHX"
+   ],
+   "art": [
+    "AVHX"
+   ]
+  },
+  {
+   "race": 12,
+   "portraits": [
+    27,
+    46,
+    74,
+    12,
+    21,
+    29,
+    30,
+    33,
+    36,
+    37,
+    38,
+    40,
+    43,
+    48,
+    49,
+    51,
+    57,
+    58,
+    72,
+    85,
+    86
+   ],
+   "voices_english": [
+    "AXH2",
+    "AEHX",
+    "AWHX",
+    "AKHX",
+    "AXH6",
+    "AHHX",
+    "AFHX",
+    "AXH0",
+    "AXH3"
+   ],
+   "voices_other_languages": [
+    "AEHX",
+    "AWHX",
+    "AKHX",
+    "AHHX",
+    "AFHX"
+   ],
+   "art": [
+    "APHX",
+    "AHHX",
+    "AFHX",
+    "AHH0",
+    "AHH1",
+    "AEHX"
+   ]
+  },
+  {
+   "race": 13,
+   "portraits": [
+    13,
+    82,
+    84
+   ],
+   "voices_english": [
+    "AXH0",
+    "AXH5",
+    "AXH7",
+    "AVHX"
+   ],
+   "voices_other_languages": [
+    "AVHX"
+   ],
+   "art": [
+    "ALHX"
+   ]
+  },
+  {
+   "race": 14,
+   "portraits": [
+    14,
+    80,
+    81,
+    89,
+    63
+   ],
+   "voices_english": [
+    "AUHX",
+    "ABHX",
+    "AOHX",
+    "AVHX",
+    "AXH0",
+    "AXH5",
+    "AXH7"
+   ],
+   "voices_other_languages": [
+    "AUHX",
+    "ABHX",
+    "AOHX",
+    "AVHX"
+   ],
+   "art": [
+    "ARHX"
+   ]
+  },
+  {
+   "race": 15,
+   "portraits": [
+    15,
+    76,
+    42,
+    44,
+    86,
+    88,
+    89,
+    54,
+    55
+   ],
+   "voices_english": [
+    "AXH5",
+    "AUHX",
+    "ABHX",
+    "AOHX",
+    "AVHX",
+    "AXH0",
+    "AXH7",
+    "AKHX",
+    "AXH2"
+   ],
+   "voices_other_languages": [
+    "AUHX",
+    "ABHX",
+    "AOHX",
+    "AVHX",
+    "AKHX"
+   ],
+   "art": [
+    "AHH1",
+    "AUHX",
+    "AKHX"
+   ]
+  }
+ ]
+}

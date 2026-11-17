@@ -1,0 +1,9 @@
+.godot/
+assets/
+*.log
+.local/
+__pycache__/
+.venv/
+wbc-import-*/
+*.log.stderr
+*.log.stdout

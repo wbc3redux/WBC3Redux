@@ -1,0 +1,1647 @@
+{
+ "schema": 1,
+ "exe_sha256": "77d47d0eff727bdec9845b0cc47e63147f470b6059d379c3f0121dbd5b5689ce",
+ "input": "tests/fey_state_fixtures.json",
+ "samples": [
+  {
+   "t": 120,
+   "player": 0,
+   "port_peasant_priority": 100,
+   "peasant_priority": 100,
+   "keeps": [
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       168
+      ],
+      [
+       "AFIX",
+       93
+      ]
+     ],
+     "scored": 3,
+     "choice_equal_dice": "BKF1",
+     "choice_last_rolls_30": "BKF1"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       168
+      ],
+      [
+       "AFIX",
+       93
+      ]
+     ],
+     "scored": 3,
+     "choice_equal_dice": "BKF1",
+     "choice_last_rolls_30": "BKF1"
+    }
+   ]
+  },
+  {
+   "t": 120,
+   "player": 1,
+   "port_peasant_priority": 100,
+   "peasant_priority": 100,
+   "keeps": [
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       168
+      ],
+      [
+       "AFIX",
+       93
+      ]
+     ],
+     "scored": 3,
+     "choice_equal_dice": "BKF1",
+     "choice_last_rolls_30": "BKF1"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       168
+      ],
+      [
+       "AFIX",
+       93
+      ]
+     ],
+     "scored": 3,
+     "choice_equal_dice": "BKF1",
+     "choice_last_rolls_30": "BKF1"
+    }
+   ]
+  },
+  {
+   "t": 180,
+   "player": 0,
+   "port_peasant_priority": 100,
+   "peasant_priority": 100,
+   "keeps": [
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       116
+      ],
+      [
+       "AFIX",
+       76
+      ],
+      [
+       "AFJX",
+       55
+      ]
+     ],
+     "scored": 3,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    },
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       116
+      ],
+      [
+       "AFIX",
+       76
+      ],
+      [
+       "AFJX",
+       55
+      ]
+     ],
+     "scored": 3,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    }
+   ]
+  },
+  {
+   "t": 180,
+   "player": 1,
+   "port_peasant_priority": 58,
+   "peasant_priority": 58,
+   "keeps": [
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       63
+      ],
+      [
+       "AFIX",
+       76
+      ],
+      [
+       "AFJX",
+       83
+      ]
+     ],
+     "scored": 3,
+     "choice_equal_dice": "AFJX",
+     "choice_last_rolls_30": "AFJX"
+    },
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       63
+      ],
+      [
+       "AFIX",
+       76
+      ],
+      [
+       "AFJX",
+       83
+      ]
+     ],
+     "scored": 3,
+     "choice_equal_dice": "AFJX",
+     "choice_last_rolls_30": "AFJX"
+    }
+   ]
+  },
+  {
+   "t": 240,
+   "player": 0,
+   "port_peasant_priority": 100,
+   "peasant_priority": 100,
+   "keeps": [
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       108
+      ],
+      [
+       "AFIX",
+       52
+      ],
+      [
+       "AFJX",
+       74
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFJX",
+     "choice_last_rolls_30": "AFJX"
+    },
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       108
+      ],
+      [
+       "AFIX",
+       52
+      ],
+      [
+       "AFJX",
+       74
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFJX",
+     "choice_last_rolls_30": "AFJX"
+    }
+   ]
+  },
+  {
+   "t": 240,
+   "player": 1,
+   "port_peasant_priority": 100,
+   "peasant_priority": 100,
+   "keeps": [
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       139
+      ],
+      [
+       "AFIX",
+       64
+      ],
+      [
+       "AFJX",
+       64
+      ]
+     ],
+     "scored": 3,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    },
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       139
+      ],
+      [
+       "AFIX",
+       64
+      ],
+      [
+       "AFJX",
+       64
+      ]
+     ],
+     "scored": 3,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    }
+   ]
+  },
+  {
+   "t": 300,
+   "player": 0,
+   "port_peasant_priority": 100,
+   "peasant_priority": 100,
+   "keeps": [
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       124
+      ],
+      [
+       "AFIX",
+       67
+      ],
+      [
+       "AFJX",
+       91
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AFJX",
+     "choice_last_rolls_30": "AFJX"
+    },
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       124
+      ],
+      [
+       "AFIX",
+       67
+      ],
+      [
+       "AFJX",
+       91
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AFJX",
+     "choice_last_rolls_30": "AFJX"
+    }
+   ]
+  },
+  {
+   "t": 300,
+   "player": 1,
+   "port_peasant_priority": 60,
+   "peasant_priority": 60,
+   "keeps": [
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       64
+      ],
+      [
+       "AFIX",
+       52
+      ],
+      [
+       "AFJX",
+       57
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFJX"
+    },
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       64
+      ],
+      [
+       "AFIX",
+       52
+      ],
+      [
+       "AFJX",
+       57
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFJX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       64
+      ],
+      [
+       "AFIX",
+       52
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       64
+      ],
+      [
+       "AFIX",
+       52
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    }
+   ]
+  },
+  {
+   "t": 360,
+   "player": 0,
+   "port_peasant_priority": 100,
+   "peasant_priority": 100,
+   "keeps": [
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       114
+      ],
+      [
+       "AFIX",
+       64
+      ],
+      [
+       "AFJX",
+       63
+      ]
+     ],
+     "scored": 3,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    },
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       114
+      ],
+      [
+       "AFIX",
+       64
+      ],
+      [
+       "AFJX",
+       63
+      ]
+     ],
+     "scored": 3,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       114
+      ],
+      [
+       "AFIX",
+       64
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    }
+   ]
+  },
+  {
+   "t": 360,
+   "player": 1,
+   "port_peasant_priority": 63,
+   "peasant_priority": 63,
+   "keeps": [
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       67
+      ],
+      [
+       "AFIX",
+       51
+      ],
+      [
+       "AFJX",
+       74
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AFJX",
+     "choice_last_rolls_30": "AFJX"
+    },
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       67
+      ],
+      [
+       "AFIX",
+       51
+      ],
+      [
+       "AFJX",
+       74
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AFJX",
+     "choice_last_rolls_30": "AFJX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       67
+      ],
+      [
+       "AFIX",
+       51
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       67
+      ],
+      [
+       "AFIX",
+       51
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       67
+      ],
+      [
+       "AFIX",
+       51
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    }
+   ]
+  },
+  {
+   "t": 420,
+   "player": 0,
+   "port_peasant_priority": 59,
+   "peasant_priority": 59,
+   "keeps": [
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       64
+      ],
+      [
+       "AFIX",
+       102
+      ],
+      [
+       "AFJX",
+       64
+      ],
+      [
+       "BKF2",
+       200
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AFIX",
+     "choice_last_rolls_30": "AFIX"
+    },
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       64
+      ],
+      [
+       "AFIX",
+       102
+      ],
+      [
+       "AFJX",
+       64
+      ],
+      [
+       "BKF2",
+       200
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AFIX",
+     "choice_last_rolls_30": "AFIX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       64
+      ],
+      [
+       "AFIX",
+       102
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFIX",
+     "choice_last_rolls_30": "AFIX"
+    }
+   ]
+  },
+  {
+   "t": 420,
+   "player": 1,
+   "port_peasant_priority": 70,
+   "peasant_priority": 70,
+   "keeps": [
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       71
+      ],
+      [
+       "AFIX",
+       69
+      ],
+      [
+       "AFJX",
+       92
+      ]
+     ],
+     "scored": 4,
+     "choice_equal_dice": "BKF2",
+     "choice_last_rolls_30": "BKF2"
+    },
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       71
+      ],
+      [
+       "AFIX",
+       69
+      ],
+      [
+       "AFJX",
+       92
+      ]
+     ],
+     "scored": 4,
+     "choice_equal_dice": "BKF2",
+     "choice_last_rolls_30": "BKF2"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       71
+      ],
+      [
+       "AFIX",
+       69
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFIX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       71
+      ],
+      [
+       "AFIX",
+       69
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFIX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       71
+      ],
+      [
+       "AFIX",
+       69
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFIX"
+    }
+   ]
+  },
+  {
+   "t": 480,
+   "player": 0,
+   "port_peasant_priority": 64,
+   "peasant_priority": 64,
+   "keeps": [
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       87
+      ],
+      [
+       "AFIX",
+       70
+      ],
+      [
+       "AFJX",
+       61
+      ],
+      [
+       "BKF2",
+       200
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "BKF2",
+     "choice_last_rolls_30": "BKF2"
+    },
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       87
+      ],
+      [
+       "AFIX",
+       70
+      ],
+      [
+       "AFJX",
+       61
+      ],
+      [
+       "BKF2",
+       200
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "BKF2",
+     "choice_last_rolls_30": "BKF2"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       87
+      ],
+      [
+       "AFIX",
+       70
+      ]
+     ],
+     "scored": 0,
+     "choice_equal_dice": "",
+     "choice_last_rolls_30": ""
+    }
+   ]
+  },
+  {
+   "t": 480,
+   "player": 1,
+   "port_peasant_priority": 67,
+   "peasant_priority": 67,
+   "keeps": [
+    {
+     "type": "BKF2",
+     "port_candidates": [
+      [
+       "AFBX",
+       77
+      ],
+      [
+       "AFIX",
+       66
+      ],
+      [
+       "AFJX",
+       151
+      ],
+      [
+       "AASP",
+       101
+      ]
+     ],
+     "scored": 4,
+     "choice_equal_dice": "AFJX",
+     "choice_last_rolls_30": "AFJX"
+    },
+    {
+     "type": "BKF2",
+     "port_candidates": [
+      [
+       "AFBX",
+       77
+      ],
+      [
+       "AFIX",
+       66
+      ],
+      [
+       "AFJX",
+       151
+      ],
+      [
+       "AASP",
+       101
+      ]
+     ],
+     "scored": 4,
+     "choice_equal_dice": "AFJX",
+     "choice_last_rolls_30": "AFJX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       77
+      ],
+      [
+       "AFIX",
+       66
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFIX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       77
+      ],
+      [
+       "AFIX",
+       66
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFIX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       77
+      ],
+      [
+       "AFIX",
+       66
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFIX"
+    }
+   ]
+  },
+  {
+   "t": 540,
+   "player": 0,
+   "port_peasant_priority": 63,
+   "peasant_priority": 63,
+   "keeps": [
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       67
+      ],
+      [
+       "AFIX",
+       83
+      ],
+      [
+       "AFJX",
+       104
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFJX",
+     "choice_last_rolls_30": "AFJX"
+    },
+    {
+     "type": "BKF2",
+     "port_candidates": [
+      [
+       "AFBX",
+       67
+      ],
+      [
+       "AFIX",
+       83
+      ],
+      [
+       "AFJX",
+       104
+      ],
+      [
+       "AASP",
+       61
+      ],
+      [
+       "BKF3",
+       200
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFJX",
+     "choice_last_rolls_30": "AFJX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       67
+      ],
+      [
+       "AFIX",
+       83
+      ]
+     ],
+     "scored": 0,
+     "choice_equal_dice": "",
+     "choice_last_rolls_30": ""
+    }
+   ]
+  },
+  {
+   "t": 540,
+   "player": 1,
+   "port_peasant_priority": 66,
+   "peasant_priority": 66,
+   "keeps": [
+    {
+     "type": "BKF3",
+     "port_candidates": [
+      [
+       "AFBX",
+       77
+      ],
+      [
+       "AFIX",
+       54
+      ],
+      [
+       "AFJX",
+       88
+      ],
+      [
+       "AASP",
+       69
+      ],
+      [
+       "AEXX",
+       71
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AFJX",
+     "choice_last_rolls_30": "AFJX"
+    },
+    {
+     "type": "BKF3",
+     "port_candidates": [
+      [
+       "AFBX",
+       77
+      ],
+      [
+       "AFIX",
+       54
+      ],
+      [
+       "AFJX",
+       88
+      ],
+      [
+       "AASP",
+       69
+      ],
+      [
+       "AEXX",
+       71
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AFJX",
+     "choice_last_rolls_30": "AFJX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       77
+      ],
+      [
+       "AFIX",
+       54
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       77
+      ],
+      [
+       "AFIX",
+       54
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       77
+      ],
+      [
+       "AFIX",
+       54
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    }
+   ]
+  },
+  {
+   "t": 600,
+   "player": 0,
+   "port_peasant_priority": 66,
+   "peasant_priority": 66,
+   "keeps": [
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       71
+      ],
+      [
+       "AFIX",
+       96
+      ],
+      [
+       "AFJX",
+       60
+      ]
+     ],
+     "scored": 0,
+     "choice_equal_dice": "",
+     "choice_last_rolls_30": ""
+    },
+    {
+     "type": "BKF2",
+     "port_candidates": [
+      [
+       "AFBX",
+       71
+      ],
+      [
+       "AFIX",
+       96
+      ],
+      [
+       "AFJX",
+       60
+      ],
+      [
+       "AASP",
+       120
+      ],
+      [
+       "BKF3",
+       200
+      ]
+     ],
+     "scored": 0,
+     "choice_equal_dice": "",
+     "choice_last_rolls_30": ""
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       71
+      ],
+      [
+       "AFIX",
+       96
+      ]
+     ],
+     "scored": 0,
+     "choice_equal_dice": "",
+     "choice_last_rolls_30": ""
+    }
+   ]
+  },
+  {
+   "t": 600,
+   "player": 1,
+   "port_peasant_priority": 60,
+   "peasant_priority": 60,
+   "keeps": [
+    {
+     "type": "BKF3",
+     "port_candidates": [
+      [
+       "AFBX",
+       64
+      ],
+      [
+       "AFIX",
+       57
+      ],
+      [
+       "AFJX",
+       66
+      ],
+      [
+       "AASP",
+       83
+      ],
+      [
+       "AEXX",
+       52
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AFJX",
+     "choice_last_rolls_30": "AFJX"
+    },
+    {
+     "type": "BKF3",
+     "port_candidates": [
+      [
+       "AFBX",
+       64
+      ],
+      [
+       "AFIX",
+       57
+      ],
+      [
+       "AFJX",
+       66
+      ],
+      [
+       "AASP",
+       83
+      ],
+      [
+       "AEXX",
+       52
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AFJX",
+     "choice_last_rolls_30": "AFJX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       64
+      ],
+      [
+       "AFIX",
+       57
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       64
+      ],
+      [
+       "AFIX",
+       57
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       64
+      ],
+      [
+       "AFIX",
+       57
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    }
+   ]
+  },
+  {
+   "t": 660,
+   "player": 0,
+   "port_peasant_priority": 65,
+   "peasant_priority": 65,
+   "keeps": [
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       79
+      ],
+      [
+       "AFIX",
+       98
+      ],
+      [
+       "AFJX",
+       61
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFJX"
+    },
+    {
+     "type": "BKF2",
+     "port_candidates": [
+      [
+       "AFBX",
+       79
+      ],
+      [
+       "AFIX",
+       98
+      ],
+      [
+       "AFJX",
+       61
+      ],
+      [
+       "AASP",
+       178
+      ]
+     ],
+     "scored": 3,
+     "choice_equal_dice": "AASP",
+     "choice_last_rolls_30": "AASP"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       79
+      ],
+      [
+       "AFIX",
+       98
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    }
+   ]
+  },
+  {
+   "t": 660,
+   "player": 1,
+   "port_peasant_priority": 59,
+   "peasant_priority": 59,
+   "keeps": [
+    {
+     "type": "BKF3",
+     "port_candidates": [
+      [
+       "AFBX",
+       60
+      ],
+      [
+       "AFIX",
+       54
+      ],
+      [
+       "AFJX",
+       80
+      ],
+      [
+       "AASP",
+       108
+      ],
+      [
+       "AEXX",
+       64
+      ]
+     ],
+     "scored": 3,
+     "choice_equal_dice": "AASP",
+     "choice_last_rolls_30": "AASP"
+    },
+    {
+     "type": "BKF3",
+     "port_candidates": [
+      [
+       "AFBX",
+       60
+      ],
+      [
+       "AFIX",
+       54
+      ],
+      [
+       "AFJX",
+       80
+      ],
+      [
+       "AASP",
+       108
+      ],
+      [
+       "AEXX",
+       64
+      ],
+      [
+       "BKF4",
+       200
+      ]
+     ],
+     "scored": 3,
+     "choice_equal_dice": "AASP",
+     "choice_last_rolls_30": "AASP"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       60
+      ],
+      [
+       "AFIX",
+       54
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       60
+      ],
+      [
+       "AFIX",
+       54
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       60
+      ],
+      [
+       "AFIX",
+       54
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    }
+   ]
+  },
+  {
+   "t": 720,
+   "player": 0,
+   "port_peasant_priority": 67,
+   "peasant_priority": 67,
+   "keeps": [
+    {
+     "type": "BKF1",
+     "port_candidates": [
+      [
+       "AFBX",
+       68
+      ],
+      [
+       "AFIX",
+       104
+      ],
+      [
+       "AFJX",
+       67
+      ]
+     ],
+     "scored": 2,
+     "choice_equal_dice": "AFIX",
+     "choice_last_rolls_30": "AFIX"
+    },
+    {
+     "type": "BKF3",
+     "port_candidates": [
+      [
+       "AFBX",
+       68
+      ],
+      [
+       "AFIX",
+       104
+      ],
+      [
+       "AFJX",
+       67
+      ],
+      [
+       "AASP",
+       76
+      ],
+      [
+       "AEXX",
+       662
+      ]
+     ],
+     "scored": 3,
+     "choice_equal_dice": "AEXX",
+     "choice_last_rolls_30": "AEXX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       68
+      ],
+      [
+       "AFIX",
+       104
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFIX",
+     "choice_last_rolls_30": "AFIX"
+    }
+   ]
+  },
+  {
+   "t": 720,
+   "player": 1,
+   "port_peasant_priority": 56,
+   "peasant_priority": 56,
+   "keeps": [
+    {
+     "type": "BKF3",
+     "port_candidates": [
+      [
+       "AFBX",
+       66
+      ],
+      [
+       "AFIX",
+       51
+      ],
+      [
+       "AFJX",
+       139
+      ],
+      [
+       "AASP",
+       92
+      ],
+      [
+       "AEXX",
+       123
+      ]
+     ],
+     "scored": 4,
+     "choice_equal_dice": "AFJX",
+     "choice_last_rolls_30": "AEXX"
+    },
+    {
+     "type": "BKF3",
+     "port_candidates": [
+      [
+       "AFBX",
+       66
+      ],
+      [
+       "AFIX",
+       51
+      ],
+      [
+       "AFJX",
+       139
+      ],
+      [
+       "AASP",
+       92
+      ],
+      [
+       "AEXX",
+       123
+      ]
+     ],
+     "scored": 4,
+     "choice_equal_dice": "AFJX",
+     "choice_last_rolls_30": "AEXX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       66
+      ],
+      [
+       "AFIX",
+       51
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       66
+      ],
+      [
+       "AFIX",
+       51
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    },
+    {
+     "type": "BKF0",
+     "port_candidates": [
+      [
+       "AFBX",
+       66
+      ],
+      [
+       "AFIX",
+       51
+      ]
+     ],
+     "scored": 1,
+     "choice_equal_dice": "AFBX",
+     "choice_last_rolls_30": "AFBX"
+    }
+   ]
+  }
+ ]
+}

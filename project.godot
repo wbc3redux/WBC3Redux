@@ -1,0 +1,30 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="WBC3 Redux"
+config/description="Unofficial fan reimplementation of the Warlords Battlecry III skirmish. Requires the original game."
+run/main_scene="res://menus/front_end.tscn"
+config/icon="res://artwork/icon/wbc3redux-256.png"
+config/features=PackedStringArray("4.7")
+
+[autoload]
+
+DisplayManager="*res://core/display.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=800
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"

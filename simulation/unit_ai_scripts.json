@@ -1,0 +1,5849 @@
+{
+ "source": "tools/emulate_unit_ai.py: 0x506c40 executed under Unicorn (ENCOUNTERS_RESEARCH.md)",
+ "count": 9,
+ "scripts": [
+  {
+   "radius": 20,
+   "rules": [
+    {
+     "enabled": 1,
+     "priority": 90,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 1,
+       "expected": 1
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 1,
+      "type": 10,
+      "name": "flee_near",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 1,
+     "priority": 80,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 1,
+       "name": "enemy_near_post",
+       "subject": 0,
+       "flag": 1,
+       "value": 0,
+       "active": 1,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 1,
+      "type": 9,
+      "name": "return_post",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 1,
+     "priority": 100,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 6,
+       "name": "was_hit",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 1,
+       "expected": 1
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 1,
+      "type": 4,
+      "name": "flee",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    }
+   ],
+   "default": {
+    "active": 0,
+    "type": 0,
+    "name": "go_home",
+    "param": 0,
+    "subject": 0
+   },
+   "id": 0,
+   "uses_leader": 0,
+   "casts": 0,
+   "index": 0,
+   "name": "Cowardly",
+   "name_string": 537
+  },
+  {
+   "radius": 20,
+   "rules": [
+    {
+     "enabled": 1,
+     "priority": 100,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 7,
+       "name": "enemy_adjacent",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 1,
+       "expected": 1
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 1,
+      "type": 3,
+      "name": "attack_adjacent",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    }
+   ],
+   "default": {
+    "active": 0,
+    "type": 0,
+    "name": "go_home",
+    "param": 0,
+    "subject": 0
+   },
+   "id": 1,
+   "uses_leader": 0,
+   "casts": 0,
+   "index": 1,
+   "name": "Stand Ground",
+   "name_string": 539
+  },
+  {
+   "radius": 20,
+   "rules": [
+    {
+     "enabled": 1,
+     "priority": 100,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 1,
+       "value": 0,
+       "active": 1,
+       "expected": 1
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 1,
+      "type": 5,
+      "name": "attack_near",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    }
+   ],
+   "default": {
+    "active": 1,
+    "type": 9,
+    "name": "return_post",
+    "param": 0,
+    "subject": -1
+   },
+   "id": 2,
+   "uses_leader": 0,
+   "casts": 0,
+   "index": 2,
+   "name": "Defensive",
+   "name_string": 541
+  },
+  {
+   "radius": 20,
+   "rules": [
+    {
+     "enabled": 1,
+     "priority": 100,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 1,
+       "expected": 1
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 1,
+      "type": 5,
+      "name": "attack_near",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    }
+   ],
+   "default": {
+    "active": 0,
+    "type": 0,
+    "name": "go_home",
+    "param": 0,
+    "subject": 0
+   },
+   "id": 3,
+   "uses_leader": 0,
+   "casts": 0,
+   "index": 3,
+   "name": "Aggressive",
+   "name_string": 545
+  },
+  {
+   "radius": 20,
+   "rules": [
+    {
+     "enabled": 1,
+     "priority": 100,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 1,
+       "expected": 1
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 1,
+      "type": 5,
+      "name": "attack_near",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    }
+   ],
+   "default": {
+    "active": 1,
+    "type": 7,
+    "name": "wander",
+    "param": 0,
+    "subject": -1
+   },
+   "id": 4,
+   "uses_leader": 0,
+   "casts": 0,
+   "index": 4,
+   "name": "Rampant",
+   "name_string": 547
+  },
+  {
+   "radius": 20,
+   "rules": [
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    }
+   ],
+   "default": {
+    "active": 1,
+    "type": 7,
+    "name": "wander",
+    "param": 0,
+    "subject": -1
+   },
+   "id": 9,
+   "uses_leader": 0,
+   "casts": 0,
+   "index": 5,
+   "name": "Scout",
+   "name_string": 549
+  },
+  {
+   "radius": 20,
+   "rules": [
+    {
+     "enabled": 1,
+     "priority": 100,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 1,
+       "expected": 1
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 1,
+      "type": 5,
+      "name": "attack_near",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    }
+   ],
+   "default": {
+    "active": 1,
+    "type": 9,
+    "name": "return_post",
+    "param": 0,
+    "subject": -1
+   },
+   "id": 7,
+   "uses_leader": 0,
+   "casts": 0,
+   "index": 6,
+   "name": "Standard",
+   "name_string": 543
+  },
+  {
+   "radius": 20,
+   "rules": [
+    {
+     "enabled": 1,
+     "priority": 80,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 1,
+       "expected": 1
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 1,
+      "type": 5,
+      "name": "attack_near",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 1,
+     "priority": 100,
+     "busy_ok": 1,
+     "conditions": [
+      {
+       "type": 8,
+       "name": "distance_below",
+       "subject": 2,
+       "flag": 0,
+       "value": 20,
+       "active": 1,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 1,
+      "type": 1,
+      "name": "follow",
+      "param": 0,
+      "subject": 2
+     }
+    },
+    {
+     "enabled": 1,
+     "priority": 90,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 2,
+       "flag": 0,
+       "value": 0,
+       "active": 1,
+       "expected": 1
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 1,
+      "type": 5,
+      "name": "attack_near",
+      "param": 0,
+      "subject": 2
+     }
+    },
+    {
+     "enabled": 1,
+     "priority": 50,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 8,
+       "name": "distance_below",
+       "subject": 2,
+       "flag": 0,
+       "value": 5,
+       "active": 1,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 1,
+      "type": 1,
+      "name": "follow",
+      "param": 0,
+      "subject": 2
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    }
+   ],
+   "default": {
+    "active": 0,
+    "type": 0,
+    "name": "go_home",
+    "param": 0,
+    "subject": 0
+   },
+   "id": 5,
+   "uses_leader": 1,
+   "casts": 0,
+   "index": 7,
+   "name": "Guardian",
+   "name_string": 551
+  },
+  {
+   "radius": 20,
+   "rules": [
+    {
+     "enabled": 1,
+     "priority": 80,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 1,
+       "expected": 1
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 1,
+      "type": 5,
+      "name": "attack_near",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 1,
+     "priority": 100,
+     "busy_ok": 1,
+     "conditions": [
+      {
+       "type": 8,
+       "name": "distance_below",
+       "subject": 2,
+       "flag": 0,
+       "value": 20,
+       "active": 1,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 1,
+      "type": 1,
+      "name": "follow",
+      "param": 0,
+      "subject": 2
+     }
+    },
+    {
+     "enabled": 1,
+     "priority": 90,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 2,
+       "flag": 0,
+       "value": 0,
+       "active": 1,
+       "expected": 1
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 1,
+      "type": 5,
+      "name": "attack_near",
+      "param": 0,
+      "subject": 2
+     }
+    },
+    {
+     "enabled": 1,
+     "priority": 50,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 8,
+       "name": "distance_below",
+       "subject": 2,
+       "flag": 0,
+       "value": 5,
+       "active": 1,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 1,
+      "type": 1,
+      "name": "follow",
+      "param": 0,
+      "subject": 2
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    },
+    {
+     "enabled": 0,
+     "priority": 0,
+     "busy_ok": 0,
+     "conditions": [
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      },
+      {
+       "type": 0,
+       "name": "enemy_near",
+       "subject": 0,
+       "flag": 0,
+       "value": 0,
+       "active": 0,
+       "expected": 0
+      }
+     ],
+     "action": {
+      "active": 0,
+      "type": 0,
+      "name": "go_home",
+      "param": 0,
+      "subject": 0
+     }
+    }
+   ],
+   "default": {
+    "active": 0,
+    "type": 0,
+    "name": "go_home",
+    "param": 0,
+    "subject": 0
+   },
+   "id": 6,
+   "uses_leader": 1,
+   "casts": 1,
+   "index": 8,
+   "name": "Magic Guardian",
+   "name_string": 553
+  }
+ ],
+ "constants": {
+  "flight_offsets": [
+   0,
+   1,
+   -1,
+   2,
+   -2,
+   3,
+   -3,
+   4
+  ],
+  "direction_vectors": [
+   0,
+   -1,
+   1,
+   -1,
+   1,
+   0,
+   1,
+   1,
+   0,
+   1,
+   -1,
+   1,
+   -1,
+   0,
+   -1,
+   -1
+  ],
+  "tower_period_ms": [
+   6000,
+   3000,
+   2400,
+   1900,
+   1600,
+   1400,
+   1200,
+   1000,
+   900,
+   800,
+   700,
+   600,
+   500,
+   450,
+   400,
+   350,
+   300
+  ]
+ },
+ "lairs": [
+  {
+   "index": 0,
+   "response_ms": 30000,
+   "min_ms": 100000,
+   "max_ms": 150000,
+   "effect": "EZ08",
+   "effect_on_ground": 1,
+   "entries": [
+    {
+     "count_a": 3,
+     "type_a": "AUIX",
+     "level_a": 1,
+     "count_b": 0,
+     "type_b": "",
+     "level_b": 0
+    },
+    {
+     "count_a": 4,
+     "type_a": "AUIX",
+     "level_a": 1,
+     "count_b": 0,
+     "type_b": "",
+     "level_b": 0
+    },
+    {
+     "count_a": 4,
+     "type_a": "AUIX",
+     "level_a": 1,
+     "count_b": 1,
+     "type_b": "AUKX",
+     "level_b": 4
+    },
+    {
+     "count_a": 4,
+     "type_a": "AUIX",
+     "level_a": 1,
+     "count_b": 1,
+     "type_b": "AULX",
+     "level_b": 3
+    },
+    {
+     "count_a": 5,
+     "type_a": "AUIX",
+     "level_a": 1,
+     "count_b": 1,
+     "type_b": "AUJX",
+     "level_b": 6
+    },
+    {
+     "count_a": 5,
+     "type_a": "AUIX",
+     "level_a": 1,
+     "count_b": 1,
+     "type_b": "AUJX",
+     "level_b": 8
+    }
+   ],
+   "boss": "AUAX",
+   "boss_level": 12,
+   "raw_hex": "30750000a0860100f0490200455a3038010006000300000041554958010000000000000000000000040000004155495801000000000000000000000004000000415549580100010041554b580400000004000000415549580100010041554c580300000005000000415549580100010041554a580600000005000000415549580100010041554a5808000000415541580c000000"
+  },
+  {
+   "index": 1,
+   "response_ms": 30000,
+   "min_ms": 80000,
+   "max_ms": 120000,
+   "effect": "EZ08",
+   "effect_on_ground": 1,
+   "entries": [
+    {
+     "count_a": 2,
+     "type_a": "AAHA",
+     "level_a": 1,
+     "count_b": 0,
+     "type_b": "",
+     "level_b": 0
+    },
+    {
+     "count_a": 3,
+     "type_a": "AAHA",
+     "level_a": 1,
+     "count_b": 0,
+     "type_b": "",
+     "level_b": 0
+    }
+   ],
+   "boss": "AAHA",
+   "boss_level": 16,
+   "raw_hex": "3075000080380100c0d40100455a3038010002000200000041414841010000000000000000000000030000004141484101000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004141484110000000"
+  },
+  {
+   "index": 2,
+   "response_ms": 30000,
+   "min_ms": 80000,
+   "max_ms": 120000,
+   "effect": "EZ08",
+   "effect_on_ground": 1,
+   "entries": [
+    {
+     "count_a": 2,
+     "type_a": "AMJX",
+     "level_a": 1,
+     "count_b": 0,
+     "type_b": "",
+     "level_b": 0
+    },
+    {
+     "count_a": 3,
+     "type_a": "AMJX",
+     "level_a": 1,
+     "count_b": 0,
+     "type_b": "",
+     "level_b": 0
+    },
+    {
+     "count_a": 4,
+     "type_a": "AMJX",
+     "level_a": 1,
+     "count_b": 0,
+     "type_b": "",
+     "level_b": 0
+    }
+   ],
+   "boss": "AMJX",
+   "boss_level": 18,
+   "raw_hex": "3075000080380100c0d40100455a30380100030002000000414d4a5801000000000000000000000003000000414d4a5801000000000000000000000004000000414d4a58010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000414d4a5812000000"
+  },
+  {
+   "index": 3,
+   "response_ms": 30000,
+   "min_ms": 70000,
+   "max_ms": 110000,
+   "effect": "EZ08",
+   "effect_on_ground": 1,
+   "entries": [
+    {
+     "count_a": 3,
+     "type_a": "AOSX",
+     "level_a": 1,
+     "count_b": 0,
+     "type_b": "",
+     "level_b": 0
+    },
+    {
+     "count_a": 4,
+     "type_a": "AOSX",
+     "level_a": 1,
+     "count_b": 0,
+     "type_b": "",
+     "level_b": 0
+    },
+    {
+     "count_a": 5,
+     "type_a": "AOSX",
+     "level_a": 1,
+     "count_b": 0,
+     "type_b": "",
+     "level_b": 0
+    },
+    {
+     "count_a": 3,
+     "type_a": "AOSX",
+     "level_a": 1,
+     "count_b": 1,
+     "type_b": "AOKX",
+     "level_b": 3
+    },
+    {
+     "count_a": 3,
+     "type_a": "AOSX",
+     "level_a": 1,
+     "count_b": 1,
+     "type_b": "AONX",
+     "level_b": 5
+    },
+    {
+     "count_a": 2,
+     "type_a": "ASGS",
+     "level_a": 1,
+     "count_b": 1,
+     "type_b": "AOKX",
+     "level_b": 4
+    }
+   ],
+   "boss": "AONX",
+   "boss_level": 18,
+   "raw_hex": "3075000070110100b0ad0100455a30380100060003000000414f535801000000000000000000000004000000414f535801000000000000000000000005000000414f535801000000000000000000000003000000414f535801000100414f4b580300000003000000414f535801000100414f4e5805000000020000004153475301000100414f4b5804000000414f4e5812000000"
+  },
+  {
+   "index": 4,
+   "response_ms": 30000,
+   "min_ms": 90000,
+   "max_ms": 120000,
+   "effect": "EZ08",
+   "effect_on_ground": 1,
+   "entries": [
+    {
+     "count_a": 5,
+     "type_a": "AKKX",
+     "level_a": 1,
+     "count_b": 0,
+     "type_b": "",
+     "level_b": 0
+    },
+    {
+     "count_a": 5,
+     "type_a": "AKKX",
+     "level_a": 1,
+     "count_b": 1,
+     "type_b": "AKKX",
+     "level_b": 5
+    },
+    {
+     "count_a": 4,
+     "type_a": "AKKX",
+     "level_a": 1,
+     "count_b": 1,
+     "type_b": "AKLX",
+     "level_b": 3
+    },
+    {
+     "count_a": 4,
+     "type_a": "AKLX",
+     "level_a": 1,
+     "count_b": 0,
+     "type_b": "",
+     "level_b": 0
+    },
+    {
+     "count_a": 3,
+     "type_a": "AKLX",
+     "level_a": 1,
+     "count_b": 1,
+     "type_b": "AKOX",
+     "level_b": 4
+    },
+    {
+     "count_a": 4,
+     "type_a": "AKKX",
+     "level_a": 1,
+     "count_b": 1,
+     "type_b": "AKNX",
+     "level_b": 4
+    }
+   ],
+   "boss": "AKOX",
+   "boss_level": 15,
+   "raw_hex": "30750000905f0100c0d40100455a30380100060005000000414b4b5801000000000000000000000005000000414b4b5801000100414b4b580500000004000000414b4b5801000100414b4c580300000004000000414b4c5801000000000000000000000003000000414b4c5801000100414b4f580400000004000000414b4b5801000100414b4e5804000000414b4f580f000000"
+  },
+  {
+   "index": 5,
+   "response_ms": 30000,
+   "min_ms": 70000,
+   "max_ms": 110000,
+   "effect": "EZ08",
+   "effect_on_ground": 1,
+   "entries": [
+    {
+     "count_a": 3,
+     "type_a": "AKJX",
+     "level_a": 1,
+     "count_b": 1,
+     "type_b": "AKJX",
+     "level_b": 3
+    },
+    {
+     "count_a": 3,
+     "type_a": "AKJX",
+     "level_a": 1,
+     "count_b": 1,
+     "type_b": "AKJX",
+     "level_b": 5
+    },
+    {
+     "count_a": 2,
+     "type_a": "AKJX",
+     "level_a": 1,
+     "count_b": 1,
+     "type_b": "AKJX",
+     "level_b": 4
+    }
+   ],
+   "boss": "AKJX",
+   "boss_level": 19,
+   "raw_hex": "3075000070110100b0ad0100455a30380100030003000000414b4a5801000100414b4a580300000003000000414b4a5801000100414b4a580500000002000000414b4a5801000100414b4a5804000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000414b4a5813000000"
+  }
+ ],
+ "xp_levels": [
+  -1,
+  0,
+  5,
+  10,
+  20,
+  40,
+  70,
+  110,
+  160,
+  220,
+  280,
+  350,
+  430,
+  520,
+  610,
+  700,
+  800,
+  900,
+  1100,
+  1300,
+  1500,
+  1,
+  -1,
+  5,
+  -5,
+  3,
+  -3,
+  1,
+  -1,
+  5,
+  -5,
+  3
+ ]
+}
