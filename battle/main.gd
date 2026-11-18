@@ -540,9 +540,54 @@ func _unhandled_input(event: InputEvent):
 	refresh_status()
 	queue_redraw()
 
+## Performance (P-4): the scenario's features, sorted once per map. Most are single-frame scenery whose advance() only
+## counts clock_ms: those are not stepped; their clock is the shared `still_clock_ms`, which gets the same additions from
+## the same start (every placement starts at 0 together, and a loaded match restores equal values), so
+## settle_object_clocks() writes them the very value their own count would have reached (before a save, or on request).
+var _object_index := {}
+var _objects_indexed := -1
+var still_clock_ms := 0.0
+
+func object_index() -> Dictionary:
+	if _objects_indexed != map_objects.size():
+		_objects_indexed = map_objects.size()
+		var by_offset := {}
+		for object in map_objects: by_offset[int(object.get_meta("source_offset"))] = object
+		_object_index = {"by_offset": by_offset, "buildings": map_objects.filter(func(o): return o.is_building),
+			"stepped": map_objects.filter(func(o): return not o.is_still()), "still": map_objects.filter(func(o): return o.is_still())}
+		still_clock_ms = float(_object_index.still[0].clock_ms) if not _object_index.still.is_empty() else 0.0
+	return _object_index
+
+func settle_object_clocks():
+	for object in object_index().still: object.clock_ms = still_clock_ms
+
+## After a load: the restored clocks are the shared clock again.
+func adopt_object_clocks():
+	var still: Array = object_index().still
+	if not still.is_empty(): still_clock_ms = float(still[0].clock_ms)
+
+## P-4: the area units keep their sprite frame current in (unit_agent.gd step_sprite): the view at the camera's target and
+## where it is drawn now (smooth camera), with a margin wider than the largest frame (708 pixels, EMDD).
+func sprite_view_rect() -> Rect2:
+	var size: Vector2 = get_viewport_rect().size / camera.zoom
+	var rect := Rect2(camera.position - size / 2.0, size)
+	if camera.is_inside_tree(): rect = rect.merge(Rect2(camera.get_screen_center_position() - size / 2.0, size))
+	return rect.grow(768.0)
+
+## Every drawn frame: units that came into view (the camera moved, the fog lifted) get their current frame.
+func refresh_stale_sprites():
+	var rect := sprite_view_rect()
+	UnitAgent.view_rect = rect
+	for unit in units:
+		if unit._sprite_stale and unit.visible and rect.has_point(unit.position): unit.update_sprite()
+
 func simulation_step(delta: float):
-	for object in map_objects: object.advance(delta)
-	preload("res://battle/map_object.gd").sync_states(map_objects, production, encounters) # ART: owner colour, rubble, Mausoleum rest
+	var index := object_index()
+	for object in index.stepped: object.advance(delta)
+	still_clock_ms += delta * 1000.0
+	preload("res://battle/map_object.gd").sync_states(map_objects, production, encounters, index) # ART: owner colour, rubble, Mausoleum rest
+	UnitAgent.view_rect = sprite_view_rect()
+	UnitAgent.cull = true
 	for unit in units: unit.advance(delta)
 	simulation_time += delta
 	if combat != null: combat_step()
@@ -585,6 +630,7 @@ func _process(delta: float):
 	update_order_marker()
 	update_rain_fx()
 	sync_treasure_sprites()
+	refresh_stale_sprites()
 
 ## Parity pass 3: which unit shows the order marker (unit_agent.gd MARKER_SOURCE): the selection head when it is the local
 ## player's unit with a running conversion, while Shift / Alt is held or within 500 ms of the order (0x49c110 / 0x49c150).
@@ -657,8 +703,7 @@ func update_order_marker():
 	var mine_at := {}
 	if mines != null:
 		for id in mines.mines: mine_at[int(mines.mines[id].source_offset)] = id
-	for object in map_objects:
-		if not object.is_building: continue
+	for object in object_index().buildings:
 		var mine_id: int = int(mine_at.get(int(object.get_meta("source_offset")), -1))
 		if mine_id >= 0: object.set_marker(mine_id == selected_mine_id, marks.has(mine_id), mines.mines[mine_id].entity)
 		else: object.set_marker(object.link_id >= 0 and object.link_id == selected_building_id, object.link_id >= 0 and marks.has(object.link_id))
@@ -700,6 +745,8 @@ static func price_text(price: Array) -> String:
 	return "(" + " ".join(parts) + ")" if not parts.is_empty() else ""
 
 func refresh_status():
+	# P-4: the texts of the fixture harness panel, which normal play hides (enable_normal_play); nothing else reads them.
+	if normal_play and harness_panel != null and not harness_panel.visible: return
 	refresh_race_controls()
 	var queued := 0
 	for unit in units: queued += unit.orders.size()

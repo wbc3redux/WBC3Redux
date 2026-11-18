@@ -41,6 +41,7 @@ func run():
 	var levels: Array = [3, 6, 4, 5, 2, 2]
 	var human := false
 	var spike_ms := 8.0
+	var inside_ms := 200.0        # P-4: steps over this print what they spent inside combat and the units (--inside-ms=)
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--minutes="): minutes = float(arg.get_slice("=", 1))
 		if arg.begins_with("--map="): slug = arg.get_slice("=", 1)
@@ -51,6 +52,7 @@ func run():
 			for i in given.size(): levels[i] = given[i]
 		if arg == "--human": human = true
 		if arg.begins_with("--spike-ms="): spike_ms = float(arg.get_slice("=", 1))
+		if arg.begins_with("--inside-ms="): inside_ms = float(arg.get_slice("=", 1))
 		if arg == "--ai-detail": ai_detail = true
 		if arg == "--combat-detail": combat_detail = true
 		if arg == "--unit-detail": unit_detail = true
@@ -167,11 +169,11 @@ func run():
 		window_max = maxf(window_max, total)
 		if total > spike_ms:
 			spikes += 1
-			if spikes <= 80 or total > 200.0:
+			if spikes <= 80 or total > inside_ms:
 				var top: Array = parts.keys()
 				top.sort_custom(func(a, b): return parts[a] > parts[b])
 				print("spike t=%7.2fs %6.1f ms  %s" % [i * dt, total, ", ".join(top.slice(0, 3).map(func(k): return "%s %.1f" % [k, parts[k] / 1000.0]))])
-				if total > 200.0:
+				if total > inside_ms:
 					print("  inside: %s; sectors %.1f ms, layer %.1f ms, search_rect %.1f ms" % [", ".join(_top_diff(combat_parts, before_combat) + _top_diff(unit_parts, before_units)),
 						(scene.navigator.sector_build_us - before_nav[0]) / 1000.0, (scene.navigator.layer_build_us - before_nav[1]) / 1000.0,
 						((scene.combat.search_us if scene.combat != null else 0) - before_nav[2]) / 1000.0])
@@ -183,6 +185,8 @@ func run():
 			window = {}
 			window_max = 0.0
 		if scene.skirmish.over: break
+	if OS.get_cmdline_user_args().has("--ai-bench"): ai_bench(scene)
+	if OS.get_cmdline_user_args().has("--save-bench"): save_bench(scene)
 	var sorted := all_steps.duplicate()
 	sorted.sort()
 	var n := sorted.size()
@@ -259,6 +263,7 @@ func think(p, now_ms: int):
 	if p.first_pass:
 		p.first_pass = false
 		p.home = p.world.skirmish.slots[p.me].start
+	p.building_stopped = false
 	var steps := {}
 	var c := {"t": us()}
 	var step = func(name):
@@ -272,9 +277,12 @@ func think(p, now_ms: int):
 	p.recount(); step.call("recount")
 	p.research_level = p._research_level("PIBX"); step.call("research")
 	p.mine_census(); step.call("mine_census")
+	p.plan_outpost(); step.call("outpost")
 	p.desired_counts(); step.call("desired")
 	p.build_want_list(); step.call("want_list")
-	p.army(now_ms); step.call("army")
+	if p._improved(): p.army(now_ms)
+	else: timed_army(p, now_ms, steps)
+	step.call("army")
 	if p.next_pace_ms == 0 or p.next_pace_ms < now_ms:
 		p.next_pace_ms = now_ms + p.PACE_MS
 		p.pace(); step.call("pace")
@@ -282,14 +290,134 @@ func think(p, now_ms: int):
 	p.give_tasks(now_ms); step.call("give_tasks")
 	if p.abilities != null: p.abilities.tick(now_ms)
 	step.call("abilities")
+	preload("res://simulation/ai_resignation.gd").after_think(p, p.world.skirmish)
 	var total := 0
 	for k in steps:
-		total += steps[k]
+		if not String(k).begins_with("army."): total += steps[k]
 		ai_steps[k] = int(ai_steps.get(k, 0)) + steps[k]
 	if total > 15000:
 		var keys: Array = steps.keys()
 		keys.sort_custom(func(a, b): return steps[a] > steps[b])
-		print("  think P%d %.1f ms at %d ms: %s" % [p.me, total / 1000.0, now_ms, ", ".join(keys.slice(0, 3).map(func(k): return "%s %.1f" % [k, steps[k] / 1000.0]))])
+		print("  think P%d %.1f ms at %d ms: %s" % [p.me, total / 1000.0, now_ms, ", ".join(keys.slice(0, 6).map(func(k): return "%s %.1f" % [k, steps[k] / 1000.0]))])
+
+## ai_player.gd _army_faithful with its parts timed (same calls, same order); the parts go into `steps` as "army.*".
+func timed_army(p, now_ms: int, steps: Dictionary):
+	var Groups = p.Groups
+	var clock := {"t": us()}
+	var lap = func(name):
+		steps[name] = int(steps.get(name, 0)) + us() - int(clock.t)
+		clock.t = us()
+	for g in p.groups.duplicate():
+		if not g.has("slots"): p._faithful_record(g)
+	var ctx: Dictionary = p._group_ctx()
+	lap.call("army.ctx")
+	var before := {}
+	for g in p.groups: before[int(g.slot)] = bool(g.launched)
+	var scene := {}
+	for g in p.groups.duplicate():
+		# _update_group
+		if Groups.count(g) == 0:
+			for id in g.slots.duplicate(): if int(id) != -1: Groups.leave(g, int(id))
+			p.groups.erase(g)
+			continue
+		Groups.drop_dead(g, ctx)
+		var pop: Dictionary = p.world.production.population(p.me)
+		if int(pop.maximum) - 4 < int(pop.current) and not bool(g.launched): Groups.launch(g, ctx)
+		Groups.march(g, p._target_info(g), ctx)
+		lap.call("army.march")
+		p._scene_rows(scene)
+		lap.call("army.scene_rows")
+		p._group_orders(g, ctx, scene)
+		lap.call("army.group_orders")
+	if not p.groups.is_empty():
+		var tries := 0
+		while Groups.by_slot(p.groups, p.group_cursor) == null and tries < Groups.GROUPS:
+			p.group_cursor = (p.group_cursor + 1) % Groups.GROUPS
+			tries += 1
+		if tries < Groups.GROUPS:
+			for g in p.groups.duplicate():
+				if int(g.slot) != p.group_cursor and not Groups.has_hero(g, ctx) and int(g.mode) != 0: continue
+				if bool(g.launched): p._plan_faithful(g)
+			p.group_cursor = (p.group_cursor + 1) % Groups.GROUPS
+	lap.call("army.plan")
+	p._recruit(ctx)
+	lap.call("army.recruit")
+	Groups.pass_tail(p.groups, ctx)
+	for g in p.groups:
+		if bool(g.launched) and not bool(before.get(int(g.slot), false)):
+			p.stats.launches += 1
+			p.log.append({"t": now_ms, "launch": g.kind, "size": Groups.count(g), "player": g.target_player})
+	lap.call("army.tail")
+
+## P-4: where an autosave's time goes (main_save.gd save_document and save_game.gd write, part by part).
+func save_bench(scene):
+	var SaveGame = preload("res://simulation/save_game.gd")
+	var MainScript = preload("res://battle/main.gd")
+	SaveGame.errors.clear()
+	var refs = SaveGame.Refs.new()
+	var states := {}
+	var parts: Array = []
+	var t := us()
+	for key in MainScript.SAVE_MODULES:
+		var t1 := us()
+		states[key] = scene._save.module_state(key, refs)
+		parts.append([key, (us() - t1) / 1000.0])
+	var capture_ms := (us() - t) / 1000.0
+	parts.sort_custom(func(x, y): return x[1] > y[1])
+	t = us()
+	var modules := {}
+	for key in states: modules[key] = SaveGame.encode(states[key])
+	modules["refs"] = SaveGame.encode(refs.table)
+	var encode_ms := (us() - t) / 1000.0
+	t = us()
+	var sums: Dictionary = SaveGame.checksums(modules)
+	var sums_ms := (us() - t) / 1000.0
+	t = us()
+	var text := JSON.stringify({"modules": modules, "checksums": sums}, "	", false)
+	var json_ms := (us() - t) / 1000.0
+	t = us()
+	var error: String = SaveGame.write("user://profile-save-bench.sav", {"modules": modules, "checksums": sums})
+	var write_ms := (us() - t) / 1000.0
+	t = us()
+	scene._save.save_document()
+	var whole_ms := (us() - t) / 1000.0
+	print("SAVE BENCH: capture %.0f ms (%s), encode %.0f ms, checksums %.0f ms, stringify %.0f ms (%.1f MB), write incl. stringify %.0f ms %s; save_document %.0f ms" % [capture_ms,
+		", ".join(parts.slice(0, 5).map(func(x): return "%s %.0f" % x)), encode_ms, sums_ms, json_ms, text.length() / 1048576.0, write_ms, error, whole_ms])
+
+## P-4: single calls of the computer players' heavy parts at the end state (the calls draw random numbers and may give
+## orders, so the match is not continued after them).
+func ai_bench(scene):
+	var time = func(call: Callable) -> float:
+		var t := us()
+		call.call()
+		return (us() - t) / 1000.0
+	for p in scene.ai_manager.players:
+		if p == null or p.get("difficulty") == null or scene.skirmish.eliminated[p.me]: continue
+		var w = p.world
+		print("AI BENCH P%d race %d: %d units, %d groups, want %d" % [p.me, p.race, p.my_units().size(), p.groups.size(), p.want.size()])
+		print("  recount %.2f  mine_census %.2f  outpost %.2f  desired %.2f  want_list %.2f  ctx %.2f" % [time.call(p.recount), time.call(p.mine_census),
+			time.call(p.plan_outpost), time.call(p.desired_counts), time.call(p.build_want_list), time.call(p._group_ctx)])
+		var by_kind := {}
+		for g in p.groups:
+			if not g.has("slots") or not bool(g.launched): continue
+			var ms: float = time.call(func(): p._best_target(g))
+			var k := "kind %d%s" % [int(g.kind), " (conversion)" if int(g.kind) == p.Groups.CONVERSION else ""]
+			if not by_kind.has(k): by_kind[k] = []
+			by_kind[k].append(ms)
+		for k in by_kind: print("  _best_target %s: %s ms" % [k, ", ".join(by_kind[k].map(func(v): return "%.2f" % v))])
+		print("  ai_targets(enemy %d) %.2f ms, %d entries; mines.census %.2f ms" % [p.main_enemy, time.call(func(): w.ai_targets(p.main_enemy)), w.ai_targets(p.main_enemy).size(),
+			time.call(func(): w.mines.census(p.me))])
+		var builder = null
+		for u in p.my_units():
+			if p.is_builder(u) and not u.inside_building: builder = u
+		if builder == null: continue
+		var sites: Array = []
+		for id in w.production.construction_menu(p.me) + w.production.construction_menu(p.me, 1):
+			var found := {"cell": Vector2i(-1, -1)}
+			var ms: float = time.call(func(): found.cell = w.ai_site(p.me, id, p.home_centre(), builder))
+			sites.append("%s %.1f%s" % [id, ms, "" if found.cell.x >= 0 else " (none)"])
+		print("  ai_site: %s" % ", ".join(sites))
+		print("  give_tasks %.2f ms" % time.call(func(): p.give_tasks(scene.game_ms())))
 
 ## The three largest growths of a part table since `before` (microsecond parts; "_n" call counts left out).
 static func _top_diff(now_parts: Dictionary, before: Dictionary) -> Array:

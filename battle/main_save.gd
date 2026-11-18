@@ -22,7 +22,8 @@ func can_save() -> bool:
 
 ## The whole match as one document (simulation/save_game.gd). `thumbnail` is a PNG of the view (the original keeps a
 ## 242 x 173 picture of the screen centre in the save's header, 0x4482f0).
-func save_document(thumbnail: PackedByteArray = PackedByteArray()) -> Dictionary:
+## `with_checksums` false (the timed autosave): the "checksums" entry is left empty for SaveGame.write_async to fill.
+func save_document(thumbnail: PackedByteArray = PackedByteArray(), with_checksums: bool = true) -> Dictionary:
 	SaveGame.errors.clear()
 	var refs := SaveGame.Refs.new()
 	var states := {}
@@ -41,7 +42,7 @@ func save_document(thumbnail: PackedByteArray = PackedByteArray()) -> Dictionary
 		"line_2": Time.get_datetime_string_from_system(false, true),
 		"name": "%s - %s" % [hero_name, map_name], "map": MapData.current, "map_name": map_name,
 		"match_id": main.skirmish.match_id, "hero_id": main.match_hero_id, "game_ms": main.game_ms(), "players": players,
-		"engine": Engine.get_version_info().string, "modules": modules, "checksums": SaveGame.checksums(modules)}
+		"engine": Engine.get_version_info().string, "modules": modules, "checksums": SaveGame.checksums(modules) if with_checksums else {}}
 	if not thumbnail.is_empty(): doc["thumbnail"] = Marshalls.raw_to_base64(thumbnail)
 	if MapData.is_generated() and not main.match_setup.get("random_map", {}).is_empty(): doc["random_map"] = main.match_setup.random_map.duplicate(true)   # RM-7
 	return doc
@@ -63,7 +64,9 @@ func module_state(key: String, refs) -> Dictionary:
 		"skirmish": return main.skirmish.save_state(refs)
 		"day_night": return main.day_night.save_state(refs) if main.day_night != null else {}
 		"unit_commands": return main.unit_commands.save_state(refs)
-		"map_objects": return {"objects": main.map_objects.map(func(o): return o.save_state(refs))}
+		"map_objects":
+			main.settle_object_clocks()                # P-4: the still features' shared clock
+			return {"objects": main.map_objects.map(func(o): return o.save_state(refs))}
 	return {}
 
 ## main.gd's fields, the statics the simulation reads (the walk-phase counter, the local player of the unit draw, the
@@ -180,6 +183,7 @@ func restore_states(states: Dictionary, refs):
 			main.match_profiles[owner] = p
 	var objects: Array = states.map_objects.objects
 	for i in mini(objects.size(), main.map_objects.size()): main.map_objects[i].load_state(objects[i], main.production, main.encounters)
+	main.adopt_object_clocks()
 	# Presentation only from here: the modern rules follow the current options as at a match start (they were the same
 	# when the save was made unless the player changed them since), the view, the fog drawing and the speed.
 	main.apply_modern_rules()
@@ -250,7 +254,18 @@ func update_autosave():
 		return
 	if main.game_ms() >= main.autosave_next_ms:
 		main.autosave_next_ms = main.game_ms() + minutes * 60000
-		autosave()
+		autosave_async()
+
+## P-4: the timed autosave: the state is captured and encoded here, the checksums, the JSON text and the file are done on
+## a worker thread (SaveGame.write_async), so the match stops for less.
+func autosave_async():
+	if main.skirmish == null or main.match_setup.is_empty() or not can_save(): return
+	if main.hero_match != null and main.hero_match.deleted: return
+	var doc := save_document(PackedByteArray(), false)
+	if not SaveGame.errors.is_empty():
+		push_warning("Autosave failed: " + String(SaveGame.errors[0]))
+		return
+	SaveGame.write_async(main.save_path(true), doc)
 
 func autosave(at_end: bool = false) -> String:
 	if main.skirmish == null or main.match_setup.is_empty() or (not at_end and not can_save()): return "No match to save."

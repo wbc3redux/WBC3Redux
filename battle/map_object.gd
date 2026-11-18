@@ -108,6 +108,11 @@ func set_state(value: String):
 	apply_material()
 	queue_redraw()
 
+## A feature whose advance() only counts its clock: not a building (no rubble, no retype) and a single frame. main.gd
+## steps the others and keeps one shared clock for these (P-4).
+func is_still() -> bool:
+	return not is_building and int(definition.frames) <= 1
+
 func advance(delta: float):
 	clock_ms += delta * 1000.0
 	if state == "rubble":
@@ -121,9 +126,12 @@ func advance(delta: float):
 
 ## Links the scenario placements to the buildings the encounter code adopted (Encounters.static_cells) and mirrors their
 ## owner, death and Mausoleum rest. Without encounters (or after a fixture reset) every placement is intact again.
-static func sync_states(objects: Array, production, encounters):
-	var by_offset := {}
-	for object in objects: by_offset[int(object.get_meta("source_offset"))] = object
+## Performance (P-4): `lists` (main.gd object_index: {"by_offset", "buildings"}, built once per map) saves building the
+## offset table and walking every feature each step; without it both are made here as before.
+static func sync_states(objects: Array, production, encounters, lists = null):
+	var by_offset: Dictionary = lists.by_offset if lists != null else {}
+	if lists == null:
+		for object in objects: by_offset[int(object.get_meta("source_offset"))] = object
 	if encounters != null and production != null:
 		for id in encounters.static_cells:
 			var index: int = int(encounters.static_cells[id].object)
@@ -133,7 +141,7 @@ static func sync_states(objects: Array, production, encounters):
 				object.link_building = production.building(id)
 				object.link_world = encounters
 				object.set_state("standing")
-	for object in objects:
+	for object in (lists.buildings if lists != null else objects):
 		if not object.is_building: continue
 		if object.link_id < 0: continue
 		if encounters == null or object.link_world != encounters or production == null:
