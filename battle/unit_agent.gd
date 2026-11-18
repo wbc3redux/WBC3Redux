@@ -889,6 +889,13 @@ class MarkerLayer extends Node2D:
 	func _draw():
 		if painter.is_valid(): painter.call(self)
 
+## The row of the building strip (0x53b014: min(16 - (life * 100 / max) / 6, 15)), or -1 for no strip. Issue 3 (v0.1.0):
+## a mine's entity has no hit points, so 0 / 0 gave row 15, the strip of a nearly destroyed building. Nothing with a
+## maximum of 0 gets a strip (Provisional: the original's mines are buildings and may show a full one).
+static func building_strip_row(life: int, maximum: int) -> int:
+	if maximum <= 0: return -1
+	return mini(16 - mini((life * 100 / maximum) / 6, 16), 15)
+
 static func draw_building_marker(canvas: CanvasItem, record: Dictionary, own: bool, life: int, maximum: int, marked: bool):
 	var sheet := rings_texture()
 	if sheet == null or record.is_empty(): return
@@ -897,9 +904,10 @@ static func draw_building_marker(canvas: CanvasItem, record: Dictionary, own: bo
 	var at: Vector2 = -words.offset
 	canvas.draw_texture_rect_region(sheet, Rect2(at, ring.size), ring)
 	if marked: return
-	var row := 16 - mini((life * 100 / maxi(maximum, 1)) / 6, 16)
+	var row := building_strip_row(life, maximum)
+	if row < 0: return
 	canvas.draw_texture_rect_region(sheet, Rect2(at + Vector2(int(ring.size.x) / 2 - 0x26, ring.size.y + 1), Vector2(0x4c, 7)),
-		Rect2(0x8e, mini(row, 15) * 7, 0x4c, 7))
+		Rect2(0x8e, row * 7, 0x4c, 7))
 
 static var _digits: Texture2D
 static func digits_texture() -> Texture2D:
