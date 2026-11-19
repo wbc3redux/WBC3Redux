@@ -65,11 +65,12 @@ static func gameplay_row() -> Dictionary:
 ## Statics and constants are not script variables; modules add those themselves.
 static func capture(obj: Object, skip: Array = []) -> Dictionary:
 	var out := {}
-	for p in obj.get_property_list():
-		if not (int(p.usage) & PROPERTY_USAGE_SCRIPT_VARIABLE): continue
-		var name: String = p.name
+	for name in script_variables(obj):
 		if name in skip: continue
 		var value = obj.get(name)
+		if pure(value):
+			out[name] = copy(value)
+			continue
 		var bad := impure(value, "%s.%s" % [_label(obj), name])
 		if bad != "":
 			errors.append(bad)
@@ -77,6 +78,35 @@ static func capture(obj: Object, skip: Array = []) -> Dictionary:
 			continue
 		out[name] = copy(value)
 	return out
+
+## Performance (P-4): the names of an object's script variables, in get_property_list's order, kept per script (the list
+## of a node holds every engine property too, and a save asks it for every unit and map object).
+static var _script_variables: Dictionary = {}   # Script -> Array of names
+
+static func script_variables(obj: Object) -> Array:
+	var script = obj.get_script()
+	if script != null and _script_variables.has(script): return _script_variables[script]
+	var names: Array = []
+	for p in obj.get_property_list():
+		if int(p.usage) & PROPERTY_USAGE_SCRIPT_VARIABLE: names.append(String(p.name))
+	if script != null: _script_variables[script] = names
+	return names
+
+## Performance (P-4): `impure(value, path) == ""` without building the path text of every element; capture asks
+## `impure` for the message only when this is false.
+static func pure(value) -> bool:
+	match typeof(value):
+		TYPE_OBJECT:
+			return value == null
+		TYPE_CALLABLE, TYPE_SIGNAL, TYPE_RID:
+			return false
+		TYPE_ARRAY:
+			for item in value:
+				if not pure(item): return false
+		TYPE_DICTIONARY:
+			for k in value:
+				if not pure(k) or not pure(value[k]): return false
+	return true
 
 ## Only the named fields of `obj` (main.gd's match fields among its scene nodes), deep-copied and checked like capture.
 static func fields(obj: Object, names: Array) -> Dictionary:
@@ -204,6 +234,31 @@ static func decode(text: String):
 
 ## Atomic write (hero_store.gd): .tmp, the previous file kept as .bak, rename. Returns "" or the error message.
 static func write(path: String, document: Dictionary) -> String:
+	finish_pending()
+	return _write(path, document)
+
+## Performance (P-4): the timed autosave's checksums, JSON text and file write on a worker thread (about 90 ms of an
+## autosave late in a six-side match). `document` holds only plain data that nobody else keeps (the modules are
+## already encoded text); its "checksums" entry is filled here. One write at a time: every other reader or writer of
+## save files calls finish_pending() first (write, read, list, remove; main_match.gd when the match ends).
+static var _pending := -1                  # WorkerThreadPool task id
+
+static func write_async(path: String, document: Dictionary):
+	finish_pending()
+	_pending = WorkerThreadPool.add_task(_write_task.bind(path, document), false, "autosave")
+
+static func _write_task(path: String, document: Dictionary):
+	document["checksums"] = checksums(document.modules)
+	var error := _write(path, document)
+	if error != "": push_warning("Autosave failed: " + error)
+
+static func finish_pending():
+	if _pending == -1: return
+	var task := _pending
+	_pending = -1
+	WorkerThreadPool.wait_for_task_completion(task)
+
+static func _write(path: String, document: Dictionary) -> String:
 	var text := JSON.stringify(document, "\t", false)
 	if text.to_utf8_buffer().size() > MAX_BYTES: return "The save is too large."
 	var error := DirAccess.make_dir_recursive_absolute(path.get_base_dir())
@@ -226,6 +281,7 @@ static func write(path: String, document: Dictionary) -> String:
 
 ## {"ok": bool, "error": message, "document": {...}}. Another format, an unknown version or a damaged file is refused.
 static func read(path: String) -> Dictionary:
+	finish_pending()
 	if not FileAccess.file_exists(path): return {"ok": false, "error": "The save file is missing."}
 	var file := FileAccess.open(path, FileAccess.READ)
 	if file == null: return {"ok": false, "error": "Cannot read the save: " + error_string(FileAccess.get_open_error())}
@@ -281,4 +337,5 @@ static func list(directory: String = DIRECTORY) -> Array:
 	return out
 
 static func remove(path: String) -> bool:
+	finish_pending()
 	return DirAccess.remove_absolute(path) == OK

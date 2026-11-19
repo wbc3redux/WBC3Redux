@@ -208,6 +208,7 @@ func hero_died(store) -> bool:
 	if profile.is_ironman():
 		# FE-1 (Read): the local player's hero dies with the mode word 0x709d20 == 1 -> 0x522260 at once: the hero's
 		# saved game and its record in the hero book are deleted; the match goes on with the in-match copy.
+		preload("res://simulation/save_game.gd").finish_pending()    # P-4: a timed autosave still being written
 		if not store.delete_profile(String(profile.data.id), saved_game_files()):
 			last_error = store.last_error
 			return false

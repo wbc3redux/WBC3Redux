@@ -208,6 +208,7 @@ func start_skirmish(setup: Dictionary, hero_id: String, store = null, id: String
 	return true
 
 func end_skirmish():
+	preload("res://simulation/save_game.gd").finish_pending()    # P-4: a timed autosave still being written
 	ArtData.colours.clear()
 	if main.ai_manager != null:
 		main.ai_manager.dispose()
