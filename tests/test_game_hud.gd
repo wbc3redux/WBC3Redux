@@ -215,6 +215,19 @@ func run():
 		scene.selected_building_id = keep_b.entity_id
 		hud.refresh_cells()
 		check(int(hud.cells[1].get("icon", -1)) == 7 and int(hud.cells[2].get("icon", -1)) == 19 and int(hud.cells[0].get("icon", -1)) == 1, "Keep page: Cancel 1, Production 7, Rally 19")
+		# Issue 2: one rally line, the order-marker layer's entry (0x49d3b0 type 4); main.gd draws none of its own.
+		var rally_before: Vector2i = keep_b.rally
+		keep_b.rally = keep_b.cell_rect().position + Vector2i(6, 6)
+		scene.update_order_marker()
+		scene.arm_order_marker()
+		scene.order_layer.refresh(Time.get_ticks_msec(), false)
+		var rally_entries: Array = scene.order_layer.entries
+		check(rally_entries.size() == 1 and int(rally_entries[0].type) == 4 and not bool(rally_entries[0].hidden),
+			"issue 2: a selected own building with a rally point gives one line entry (%s)" % [rally_entries])
+		check(not scene.has_method("draw_rally_line"), "issue 2: main.gd has no second rally line drawer")
+		scene.order_layer.refresh(Time.get_ticks_msec() + 1000, false)
+		check(scene.order_layer.entries.is_empty(), "issue 2: the line goes after the 500 ms show (0x49c150)")
+		keep_b.rally = rally_before
 		check(hud.press_cell(1) and hud.dialog == "production", "Production opens the production dialog")
 		check(hud.dialog_items[0].get("id", "") == "BKK1" and hud.dialog_items[1].get("id", "") == "AHBX" and hud.dialog_items[4].get("id", "") == "PCR0", "Keep slots: upgrade 0, Peasant 1, Crusade 4 (PRODUCTION row order)")
 		var before_jobs: bool = keep_b.has_job()

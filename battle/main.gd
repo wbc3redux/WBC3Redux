@@ -759,7 +759,6 @@ func _draw():
 	if map.is_empty(): return
 	draw_build_ghost()
 	if wall_drag != null: draw_wall_drag()
-	draw_rally_line()
 	# Fixture-harness drawing only (parity pass 1): the move cross, routes and queued order numbers are debug look; the
 	# original's order marker (0x49c240, the SelectionRings icons) is not shown on a plain move (Open: its trigger).
 	if normal_play or harness_panel == null or not harness_panel.visible: return
@@ -778,28 +777,10 @@ func _draw():
 			draw_circle(point, 9, Color("86dfab"), false, 1.5)
 			draw_string(ThemeDB.fallback_font, point+Vector2(10,5), str(i+1), HORIZONTAL_ALIGNMENT_LEFT, -1, 12, Color.WHITE)
 
-## Playtest 2026-11-11: the rally point in normal play. 0x49d3b0 (Read): while the selection head is an own building
-## with a rally point (0x52e6d0), the view keeps a line record of kind 4 from the building's point (0x52e060) to the rally
-## cell; the drawer (0x49cd.., default case) colours it (8k, 8k, 0xbf + 8k) with the pulse k = 0..8..0 and puts a square
-## of 2..10 pixels, growing with k, on the rally point. Provisional: the dash pattern (an 8-step cycle, here 6 on / 2 off)
-## and the pulse speed (one step per 60 ms); the line starts at the footprint's centre.
-func draw_rally_line():
-	if not normal_play or production == null: return
-	var b = selected_building()
-	if b == null or int(b.owner) != local_player or b.rally.x < 0 or not selected_units().is_empty(): return
-	var phase := int(Time.get_ticks_msec() / 60) % 16
-	var k := phase if phase <= 8 else 16 - phase
-	var colour := Color8(k * 8, k * 8, 0xbf + k * 8)
-	var from := Vector2(b.cell_rect().get_center()) * Vector2(32, 24)
-	var to: Vector2 = navigator.center(b.rally)
-	var length := from.distance_to(to)
-	var direction := (to - from) / maxf(1.0, length)
-	var t := 0.0
-	while t < length:
-		draw_line(from + direction * t, from + direction * minf(t + 6.0, length), colour, 1.0)
-		t += 8.0
-	var half := float(1 + mini(k, 8) / 2)                 # sizes 2, 4, 6, 8, 10
-	draw_rect(Rect2(to - Vector2(half, half), Vector2(half, half) * 2.0), colour, true)
+## The rally line of a selected own building is the order-marker layer's (hud/order_markers.gd build_list: 0x49d3b0's
+## entry of type 4, the green dotted line and square of 0x49c240, shown for 500 ms after the rally order and while Shift
+## or Alt is held). Issue 2 (v0.1.0): an earlier reading of the same routine also drew a blue dashed line here for as long
+## as the building was selected, so two lines showed at once; that drawer is gone.
 
 # Fixture captures and the benchmark report (R-1: the functions are in main_captures.gd; these forward the ones called by name)
 func write_benchmark(): _captures.write_benchmark()
