@@ -597,6 +597,9 @@ func parity_checks(scene, hud, hero):
 	check(hud.icon_tip(1) == "", "no tooltips at HelpLevel 0")
 	hud.settings.set_value("HelpLevel", help)
 	check(UnitAgent.health_row(100, 100) == 0 and UnitAgent.health_row(0, 100) == 15 and UnitAgent.health_row(50, 100) == 8, "health strip rows (0x4d7710)")
+	check(UnitAgent.building_strip_row(100, 100) == 0 and UnitAgent.building_strip_row(0, 100) == 15 and UnitAgent.building_strip_row(50, 100) == 8 \
+		and UnitAgent.building_strip_row(1, 3000) == 15, "building strip rows (0x53b014)")
+	check(UnitAgent.building_strip_row(0, 0) == -1, "issue 3: no strip for an object without hit points (a mine)")
 	hero.stop()
 	for u in [helper, foe]:
 		u.selected = false
