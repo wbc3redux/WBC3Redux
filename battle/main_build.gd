@@ -219,8 +219,12 @@ func _on_builder_released(id: int, cell: Vector2i):
 	unit.advance(0)
 	main.next_wall_segment(unit)
 
+## A started building is selected for the player who ordered it. The signal comes for every side: selecting whatever
+## was placed put a computer player's new building in the local player's HUD each time one of its builders started one.
 func _on_building_placed(id: int):
-	add_marker(main.production.building(id))
+	var b = main.production.building(id)
+	add_marker(b)
+	if main.normal_play and int(b.owner) != main.local_player: return
 	main.selected_building_id = id
 	for key in main.building_nodes: main.building_nodes[key].selected = key == id
 

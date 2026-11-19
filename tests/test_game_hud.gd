@@ -215,6 +215,23 @@ func run():
 		scene.selected_building_id = keep_b.entity_id
 		hud.refresh_cells()
 		check(int(hud.cells[1].get("icon", -1)) == 7 and int(hud.cells[2].get("icon", -1)) == 19 and int(hud.cells[0].get("icon", -1)) == 1, "Keep page: Cancel 1, Production 7, Rally 19")
+		# Another side's started building leaves the local player's selection alone (it used to take it over).
+		var foreign = null
+		for dy in range(-30, 31, 6):
+			if foreign != null: break
+			for dx in range(-30, 31, 6):
+				var foreign_site: Dictionary = scene.production.can_place(1 - scene.local_player, "BWTC", keep_b.cell_rect().position + Vector2i(dx, dy))
+				if foreign_site.ok:
+					foreign = scene.production.add_completed(1 - scene.local_player, "BWTC", int(foreign_site.left), int(foreign_site.top))
+					break
+		check(foreign != null, "a building of another side for the selection check")
+		if foreign != null:
+			scene.production.building_placed.emit(foreign.entity_id)
+			check(scene.selected_building_id == keep_b.entity_id and scene.building_nodes.has(foreign.entity_id) and not scene.building_nodes[foreign.entity_id].selected,
+				"another side's new building is not selected (selected %d, keep %d)" % [scene.selected_building_id, keep_b.entity_id])
+			scene.navigator.unstamp_building(foreign.entity_id)
+			scene.production.buildings.erase(foreign.entity_id)
+			scene._build._on_building_destroyed(foreign.entity_id)
 		check(hud.press_cell(1) and hud.dialog == "production", "Production opens the production dialog")
 		check(hud.dialog_items[0].get("id", "") == "BKK1" and hud.dialog_items[1].get("id", "") == "AHBX" and hud.dialog_items[4].get("id", "") == "PCR0", "Keep slots: upgrade 0, Peasant 1, Crusade 4 (PRODUCTION row order)")
 		var before_jobs: bool = keep_b.has_job()
