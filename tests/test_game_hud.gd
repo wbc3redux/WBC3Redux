@@ -228,6 +228,23 @@ func run():
 		scene.order_layer.refresh(Time.get_ticks_msec() + 1000, false)
 		check(scene.order_layer.entries.is_empty(), "issue 2: the line goes after the 500 ms show (0x49c150)")
 		keep_b.rally = rally_before
+		# Another side's started building leaves the local player's selection alone (it used to take it over).
+		var foreign = null
+		for dy in range(-30, 31, 6):
+			if foreign != null: break
+			for dx in range(-30, 31, 6):
+				var foreign_site: Dictionary = scene.production.can_place(1 - scene.local_player, "BWTC", keep_b.cell_rect().position + Vector2i(dx, dy))
+				if foreign_site.ok:
+					foreign = scene.production.add_completed(1 - scene.local_player, "BWTC", int(foreign_site.left), int(foreign_site.top))
+					break
+		check(foreign != null, "a building of another side for the selection check")
+		if foreign != null:
+			scene.production.building_placed.emit(foreign.entity_id)
+			check(scene.selected_building_id == keep_b.entity_id and scene.building_nodes.has(foreign.entity_id) and not scene.building_nodes[foreign.entity_id].selected,
+				"another side's new building is not selected (selected %d, keep %d)" % [scene.selected_building_id, keep_b.entity_id])
+			scene.navigator.unstamp_building(foreign.entity_id)
+			scene.production.buildings.erase(foreign.entity_id)
+			scene._build._on_building_destroyed(foreign.entity_id)
 		check(hud.press_cell(1) and hud.dialog == "production", "Production opens the production dialog")
 		check(hud.dialog_items[0].get("id", "") == "BKK1" and hud.dialog_items[1].get("id", "") == "AHBX" and hud.dialog_items[4].get("id", "") == "PCR0", "Keep slots: upgrade 0, Peasant 1, Crusade 4 (PRODUCTION row order)")
 		var before_jobs: bool = keep_b.has_job()
