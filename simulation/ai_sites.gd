@@ -47,10 +47,35 @@ static func find(navigator, code: String, footprint: Array, start: Vector2i, bui
 
 ## 0x435320 on the match grid (random_map_place.gd `_search` with the match's occupancy and reservations).
 ## `units_block` = false (diagnostics only, AI-9): standing units do not block.
+## Performance (P-4): a map's three raw bytes per cell (level, material, permission) never change in a match, so they
+## are read once per cell array into packed arrays instead of through cell_data() for every cell of every window (up
+## to 225 windows of 2,500 cells a search; a search that finds no room took 60-100 ms).
+static var _static_cells = null           # the collision.data.cells array the bytes were read from
+static var _static_levels := PackedByteArray()
+static var _static_materials := PackedByteArray()
+static var _static_permissions := PackedByteArray()
+
+static func _read_static(collision):
+	var cells: Array = collision.data.cells
+	if _static_cells != null and is_same(_static_cells, cells) and _static_levels.size() == cells.size(): return
+	_static_cells = cells
+	_static_levels.resize(cells.size())
+	_static_materials.resize(cells.size())
+	_static_permissions.resize(cells.size())
+	for i in cells.size():
+		var raw = cells[i].raw
+		_static_levels[i] = int(raw[0])
+		_static_materials[i] = int(raw[1])
+		_static_permissions[i] = 1 if int(raw[2]) != 0 else 0
+
 static func search(navigator, code: String, footprint: Array, x0: int, y0: int, w: int, h: int, hint: Vector2i, builder, reserved: Dictionary, units_block := true) -> Vector2i:
 	var collision = navigator.collision
 	var width: int = collision.width
 	var height: int = collision.height
+	_read_static(collision)
+	var cells: Array = collision.data.cells
+	var building_cells: Dictionary = navigator.building_cells
+	var occupants: Dictionary = navigator.occupants
 	var margin := 3 if code in WIDE_TOWERS else 5
 	var rw: int = int(footprint[0]) + margin
 	var rh: int = int(footprint[1]) + margin
@@ -74,8 +99,8 @@ static func search(navigator, code: String, footprint: Array, x0: int, y0: int, 
 				run3 = 0
 				continue
 			var cell := Vector2i(x, y)
-			var raw = collision.cell_data(cell).raw
-			var v: int = int(raw[0])
+			var index := y * width + x
+			var v: int = _static_levels[index]
 			var at := dx * h + dy
 			if first:
 				first = false
@@ -89,12 +114,21 @@ static func search(navigator, code: String, footprint: Array, x0: int, y0: int, 
 			else:
 				run = 1
 				previous = v
-			var m: int = int(raw[1])
+			var m: int = _static_materials[index]
 			if m == 3 or m == 5 or m == 6 or m == 7 or m == 9: run2 = 0
 			else:
 				run2 += 1
 				if rw <= run2: flags[at] += 2
-			if int(raw[2]) == 0 or (Placement.blocked(navigator, cell, builder) if units_block else _blocked_static(navigator, cell)) or reserved.has(cell): run3 = 0
+			# Placement.blocked / _blocked_static written out: material 9, a building cell, a map object on the cell, and
+			# (units_block) another unit standing on it; then the reservations.
+			var taken := _static_permissions[index] == 0 or m == 9 or building_cells.has(cell)
+			if not taken:
+				var c: Dictionary = cells[index]
+				taken = c.has("object_indices") and not c.object_indices.is_empty()
+			if not taken and units_block:
+				var unit = occupants.get(cell)
+				taken = unit != null and is_instance_valid(unit) and unit != builder
+			if taken or reserved.has(cell): run3 = 0
 			else:
 				run3 += 1
 				if rw <= run3: flags[at] += 4

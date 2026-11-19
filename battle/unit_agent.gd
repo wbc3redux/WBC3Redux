@@ -318,7 +318,7 @@ func advance(delta: float):
 	if inside_building or removed: return
 	if dying:
 		if march_id >= 0: leave_march()
-		update_sprite()
+		step_sprite()
 		if _drawn or _wants_draw(): queue_redraw()
 		return
 	sync_cell()
@@ -367,7 +367,7 @@ func advance(delta: float):
 	if convert_ms >= 0.0: convert_ms += delta * 1000.0
 	var depth := preload("res://core/map_data.gd").depth(position.y) + 1 # 0x536400: ground 1x1 non-hero depth bias (M-2: MapData.depth, 256 maps)
 	if depth != z_index: z_index = depth      # P-3: the setter always reaches the rendering server
-	update_sprite()
+	step_sprite()
 	if _drawn or _wants_draw(): queue_redraw()   # P-3: a unit that drew nothing and has nothing to draw is not redrawn
 
 # Port of the waypoint rules in 0x430340: adjacent-waypoint shortcut, then wait, detour or stop
@@ -761,8 +761,38 @@ func _wants_draw() -> bool:
 
 var _drawn := false                       # P-3: the last _draw had something to draw
 
+## Performance (P-4): a unit nobody can see (hidden, or outside `view_rect`, which main.gd sets from the camera with a
+## margin wider than the largest frame) does not put a frame on its sprite in its step. Only the values update_sprite
+## writes for the step code are kept up to date (walk_frame and own_walk_frame, which the next chained step starts from,
+## and the facing at the end of a conversion cycle), in the same order and under the same tests. The sprite is marked
+## stale; main.gd refresh_stale_sprites (every drawn frame) and hit_rect bring it up to date before anybody looks.
+static var cull := false                  # main.gd turns it on with the first simulation step
+static var view_rect := Rect2()
+var _sprite_stale := false
+
+func step_sprite():
+	if not cull or (visible and view_rect.has_point(position)):
+		update_sprite()
+		return
+	if sprite == null or ArtData.data().is_empty(): return
+	_sprite_stale = true
+	if not anim.is_empty(): return
+	if in_step:
+		var entry := step_entry()
+		if entry < 0: return
+		walk_frame = (walk_phase + mini(entry, WALK_FRAMES - 1)) % WALK_FRAMES
+		var n := _walk_entries(step_diagonal)
+		var i := mini(entry, WALK_FRAMES - 1) * (n - 1) / (WALK_FRAMES - 1)
+		own_walk_frame = (own_walk_phase + i) % own_walk_frames()
+	elif chain_open:
+		pass
+	elif convert_ms >= 0.0 and convert_frames() > 0:
+		var count := convert_frames()
+		if int(fmod(convert_ms, count * CONVERT_FRAME_MS) / CONVERT_FRAME_MS) >= count - 1: direction = 4
+
 func update_sprite():
 	if sprite == null or ArtData.data().is_empty(): return # not in the tree yet (headless tests) or no import
+	_sprite_stale = false
 	if not anim.is_empty():
 		var sheet_name: String = anim.get("sheet", "")
 		var slot: int = int(anim.get("slot", ArtData.SLOT_BY_SUFFIX.get(sheet_name.trim_suffix(".RLE").substr(4), 2)))
@@ -805,6 +835,7 @@ func update_sprite():
 
 func hit_rect() -> Rect2:
 	if inside_building or dying or removed or not visible: return Rect2(Vector2(-1.0e9, -1.0e9), Vector2.ZERO)
+	if _sprite_stale: update_sprite()         # P-4: the frame of a unit outside the view is set when somebody asks
 	# The drawn frame's opaque bounds, a few pixels wider (follows the art, so large and mounted units are picked where
 	# they are drawn). The original's unit pick is Open; its building hit test 0x487c60 uses the drawn frame's opaque
 	# pixels. Without imported art (headless tests) the earlier ground-projected box stays.
@@ -978,7 +1009,7 @@ func _draw():
 ## step callbacks are the scene's (main.gd restore_unit sets them); the static walk-phase counter is saved by main.gd.
 ## shown_slot is the drawn sheet only (set again when the restored unit draws its first frame).
 const _SAVE_SKIP := ["navigator", "sprite", "sight_step", "order_step", "shown_slot", "_shown_sheet", "_shown_row", "_shown_column", "_shown_colour",
-	"_art_cache_type", "_art_sheets", "_art_entries", "_drawn", "_synced_position", "_synced_cell", "_synced_navigator"]
+	"_art_cache_type", "_art_sheets", "_art_entries", "_drawn", "_sprite_stale", "_synced_position", "_synced_cell", "_synced_navigator"]
 
 func save_state(_refs = null) -> Dictionary:
 	var s := preload("res://simulation/save_game.gd").capture(self, _SAVE_SKIP)

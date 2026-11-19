@@ -1725,13 +1725,19 @@ func _conversion_target(g: Dictionary) -> Dictionary:
 	var best := {}
 	var best_score := 0
 	var found := false
+	var snapshot = null                   # P-4: the danger objects, gathered once for every entry (ai_danger.gd)
 	for e in entries:
 		var priority := R.target_priority({"kind": 1, "code": String(e.code), "cell": [e.cell.x, e.cell.y], "state": 0, "unfinished": false,
 			"value_0x92": 0, "flag": true, "home": [home.x, home.y], "demand": demand_weights, "me": me, "players": players, "relations": relations})
 		if priority <= 0: continue
 		var own: bool = not g.target.is_empty() and String(g.target.kind) == String(e.kind) and int(g.target.id) == int(e.id)
 		var score: int = priority + 700
-		score += 100 if _danger.danger_to_building(me, String(e.kind), int(e.id), e.cell, String(e.code)) == 0 else -200
+		var entry_danger: int
+		if _danger.has_method("building_snapshot"):
+			if snapshot == null: snapshot = _danger.building_snapshot(me)
+			entry_danger = _danger.danger_to_building_in(snapshot, String(e.kind), int(e.id), e.cell, String(e.code))
+		else: entry_danger = _danger.danger_to_building(me, String(e.kind), int(e.id), e.cell, String(e.code))   # a test's stand-in
+		score += 100 if entry_danger == 0 else -200
 		var key := "%s:%d" % [String(e.kind), int(e.id)]
 		if int(targeted.get(key, 0)) != 0 and not own: score -= 400 * int(targeted[key])
 		score -= cheb(centre, e.cell)

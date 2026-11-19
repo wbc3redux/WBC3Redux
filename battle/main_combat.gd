@@ -543,7 +543,7 @@ func apply_fog_to_nodes():
 		# P-2: palette 6 while fog is on and the sprite cell is not visible (0x53b2b7, any owner). P-4: 0x47f560 reads the
 		# drawing copy inside the view (fog_view.gd, presentation only).
 		main.building_nodes[id].set_fogged(main.visibility.fog and not FogView.lit(main.visibility, main.local_player, main.building_nodes[id].sprite_cell()))
-	for object in main.map_objects:
+	for object in main.object_index().buildings:
 		if object.is_building: object.set_fogged(main.visibility.fog and not FogView.lit(main.visibility, main.local_player, Vector2i(int(object.position.x) / 32, int(object.position.y) / 24)))
 
 ## M-2: built from the visibility bytes in one pass (set_pixel per cell took 33 ms on a 256 map, twice a second); the same

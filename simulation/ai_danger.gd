@@ -113,23 +113,71 @@ func strength_near(me: int, centre: Vector2i) -> int:
 ## window BUI +0x3f + 12 around the object's cell (its anchor, as above), every hostile unit and building in it; a unit
 ## whose attack order is the object counts twice (a building's tower target is never a building or mine here).
 func danger_to_building(me: int, kind: String, id: int, cell: Vector2i, code: String) -> int:
+	return danger_to_building_in(building_snapshot(me), kind, id, cell, code)
+
+## Performance (P-4): the objects `danger` would count for a building or mine of `me`'s list, gathered once for all the
+## entries of one conversion-target choice (the list was built again for every entry: every fighter and building as a
+## dictionary, 16-17 ms a choice late in a six-side match). The same tests as before in `danger` and above: living units
+## on the map that are not hidden (+0x30), every building, neither allied with `me` nor neutral (owner 6). A unit keeps
+## its attack order's target for the doubling. Valid while the world does not change.
+func building_snapshot(me: int) -> Dictionary:
 	var c = world.combat
-	var objects: Array = []
+	var hostile := {}                     # owner -> counted (not neutral, not allied)
+	var xs := PackedInt32Array()
+	var ys := PackedInt32Array()
+	var values := PackedInt32Array()
+	var target_ids := PackedInt32Array()
+	var target_kinds: Array = []
 	for f in c.fighters.values():
 		if not c.alive(f): continue
 		var u = world.unit_by_id(int(f.id))
 		if u == null or u.removed or u.inside_building: continue
+		if bool(f.get("flag_30", false)): continue
+		var owner := int(f.owner)
+		if not hostile.has(owner): hostile[owner] = owner != 6 and not c.allied(owner, me)
+		if not hostile[owner]: continue
+		var at: Vector2i = c.unit_cell(int(f.id))
 		var order = f.get("order")
-		var targets: bool = order != null and String(order.get("target_kind", "")) == kind and int(order.get("target_id", -1)) == id
-		objects.append({"cell": c.unit_cell(int(f.id)), "owner": int(f.owner), "hidden": bool(f.get("flag_30", false)), "kind": 0,
-			"value": unit_value(String(f.type_id)), "targets": targets})
+		xs.append(at.x)
+		ys.append(at.y)
+		values.append(unit_value(String(f.type_id)))
+		target_kinds.append(String(order.get("target_kind", "")) if order != null else "")
+		target_ids.append(int(order.get("target_id", -1)) if order != null else -1)
+	var units := xs.size()
 	for b in world.production.buildings.values():
-		objects.append({"cell": Vector2i(int(b.left), int(b.top)), "owner": int(b.owner), "hidden": false, "kind": 1,
-			"value": building_value(String(b.original_type_id)), "targets": false})
+		var owner := int(b.owner)
+		if not hostile.has(owner): hostile[owner] = owner != 6 and not c.allied(owner, me)
+		if not hostile[owner]: continue
+		xs.append(int(b.left))
+		ys.append(int(b.top))
+		values.append(building_value(String(b.original_type_id)))
+	return {"xs": xs, "ys": ys, "values": values, "units": units, "target_kinds": target_kinds, "target_ids": target_ids}
+
+func danger_to_building_in(snapshot: Dictionary, kind: String, id: int, cell: Vector2i, code: String) -> int:
 	var raw: PackedByteArray = String(world.production.rules.definition(code).get("raw_hex", "")).hex_decode()
+	var half := reach(1, raw)
+	if half < 0: return 0
 	var width: int = int(world.collision.width) if world.collision != null and "width" in world.collision else 1 << 20
 	var height: int = int(world.collision.height) if world.collision != null and "height" in world.collision else 1 << 20
-	return danger(cell, reach(1, raw), width, height, objects, func(owner): return c.allied(owner, me), false)
+	var x_lo := maxi(0, cell.x - half)
+	var x_hi := mini(cell.x + half, width - 1)
+	var y_lo := maxi(0, cell.y - half)
+	var y_hi := mini(cell.y + half, height - 1)
+	var xs: PackedInt32Array = snapshot.xs
+	var ys: PackedInt32Array = snapshot.ys
+	var values: PackedInt32Array = snapshot.values
+	var units: int = snapshot.units
+	var target_kinds: Array = snapshot.target_kinds
+	var target_ids: PackedInt32Array = snapshot.target_ids
+	var total := 0
+	for i in xs.size():
+		var y := ys[i]
+		if y < y_lo or y > y_hi: continue
+		var x := xs[i]
+		if x < x_lo or x > x_hi: continue
+		if i < units and target_ids[i] == id and target_kinds[i] == kind: total += values[i] * 2
+		else: total += values[i]
+	return total
 
 ## 0x4fac00(AI of `me`, unit `asker_id`, only_targeting) on the port's world. The map rows hold the units on the map
 ## (living fighters not inside a building; a worker in a mine has left play, state 8) and the buildings (by their
