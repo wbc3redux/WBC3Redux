@@ -370,10 +370,24 @@ func order_site_visit(head, hovered: Dictionary, point: Vector2, mods: Dictionar
 	head.give_order({"kind": "move", "target": main.navigator.center(goal), "requested": point, "group": 0, "speed": head.base_speed,
 		"individual": true, "site": id}, "append" if mods.shift else "replace")
 	main.combat.note_move(head.unit_id, goal)
-	main.site_orders[head.unit_id] = {"building": id, "kind": kind}
+	main.site_orders[head.unit_id] = {"building": id, "kind": kind, "goal": goal}
 	return true
 
-## Orders 0xb / 0x13 on arrival (the order switch at line 195608 of the decompile): another order drops the visit.
+## Issue 1 (v0.1.0): the dialog opened wherever the hero's walk ended (stopped, a failed route, a fight), at any later
+## moment. The visit now counts only when the hero stands at the cell it was sent to or beside the building, within
+## SITE_REACH cells (Provisional: the original's own arrival test is not read; a blocked goal ends a walk a cell or two
+## short). An order from a save made before this fix has no goal and is tested against the building only.
+const SITE_REACH := 2
+
+func arrived_at_site(unit, order: Dictionary, b) -> bool:
+	var cell: Vector2i = unit.cell
+	if order.get("goal") is Vector2i:
+		var goal: Vector2i = order.goal
+		if maxi(absi(cell.x - goal.x), absi(cell.y - goal.y)) <= SITE_REACH: return true
+	return b.cell_rect().grow(SITE_REACH).has_point(cell)
+
+## Orders 0xb / 0x13 on arrival (the order switch at line 195608 of the decompile): another order drops the visit, and
+## so does a walk that ends anywhere but at the site (issue 1).
 func resolve_site_orders():
 	for id in main.site_orders.keys():
 		var unit = main.unit_by_id(int(id))
@@ -388,6 +402,10 @@ func resolve_site_orders():
 		main.site_orders.erase(id)
 		var b = main.production.building(int(order.building))
 		if b == null or b.hit_points <= 0: continue
+		# The player's own attack order (not a script's) replaced the walk without leaving a move order behind.
+		var f = main.combat.fighters.get(int(id)) if main.combat != null else null
+		if f != null and f.get("order") != null and not bool(f.order.get("ai", false)): continue
+		if not arrived_at_site(unit, order, b): continue
 		if order.kind == "quest": arrive_at_quest_site(int(order.building))
 		else: arrive_at_shop(int(order.building))
 
