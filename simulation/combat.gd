@@ -878,7 +878,7 @@ func _hit(f, swing: Dictionary):
 	# against the roll stored with its attack (+0x228). Damage is resolved where the missile meets someone (0x5427e0).
 	var shooter := {"kind": "unit", "owner": f.owner, "cell": unit_cell(f.id), "rect": _sprite_rect("unit", f.id),
 		"launch_offset": _launch_offset(f), "combat": Rules.effective_combat(combat_block(f)), "roll": int(swing.message_roll),
-		"flags_ba": 0, "high": false, "elevation": _elevation(unit_cell(f.id))}
+		"flags_ba": 0, "high": bool(units[f.id].flying), "elevation": _elevation(unit_cell(f.id))}   # issue 11: a flyer shoots from the air
 	var missile_id := String(f.stats.get("missile", MISSILE_IDS.unit))
 	var damage := int(f.stats.dmg)
 	# B3-1 (E10, Emulated "ammunition" shots): a shot of damage type 5 with a stored animal uses one: damage x 3, the animal's id.
@@ -1137,6 +1137,14 @@ class MissileWorld:
 			if not c.is_empty() and c.has("object_indices") and not c.object_indices.is_empty():
 				return {"kind": "other", "id": -1, "owner": 6}
 		return {}
+	## Issue 11: the cell's flyer (the air array, cell +0x1c), which the flight step asks for at heights 2 and above. Before,
+	## the world answered with the ground layer only, so no missile ever met a flying unit. Provisional: which heights
+	## read which layer in 0x53fbc0 is not read; a flyer carries the "tall" bits (bit 21), which the hit test does read.
+	func air_occupant(cell: Vector2i) -> Dictionary:
+		var unit = combat.navigator.air_occupant(cell, null)
+		if unit == null or not combat.fighters.has(unit.unit_id): return {}
+		var f = combat.fighters[unit.unit_id]
+		return {"kind": "unit", "id": f.id, "owner": f.owner, "hp": f.hp, "tall": true}
 	func hard_block(cell: Vector2i) -> bool:
 		var nav = combat.navigator
 		if nav.collision == null or not nav.collision.inside(cell): return false
@@ -1188,7 +1196,7 @@ func _missile_target(kind: String, id: int) -> Dictionary:
 		var u = units[id]
 		var speed := int(t.stats.get("speed", 8)) - int(t.stats.get("enc", 0)) + (2 if near_hero(t) else 0)
 		return {"kind": "unit", "cell": unit_cell(id), "pixel": Vector2i(int(u.position.x), int(u.position.y)), "moving": bool(u.in_step),
-			"facing": int(u.direction), "speed": speed, "high": false, "elevation": _elevation(unit_cell(id))}
+			"facing": int(u.direction), "speed": speed, "high": bool(u.flying), "elevation": _elevation(unit_cell(id))}   # issue 11: bit 21
 	var b = production.building(id)
 	var sprite := _building_sprite(b)
 	return {"kind": "building", "cell": sprite.cell, "pixel": sprite.pixel, "moving": false, "facing": 0, "speed": 0, "high": false,
