@@ -11,7 +11,7 @@ for a similar project. The full trademark as the name ("Warlords Battlecry Rebor
   `WBC3Redux-Setup-<version>.exe`, install folder `WBC3Redux`. `project.godot` `config/name` is "WBC3 Redux", so saves
   and settings live in `%APPDATA%\Godot\app_userdata\WBC3 Redux` (development: `.local\Godot\app_userdata\WBC3 Redux`,
   copied from the old "WBC3 Reference Build" folder, which stays).
-- The exe's file properties (export preset, written by Godot without rcedit): product "WBC3 Redux", version 0.1.0.0,
+- The exe's file properties (export preset, written by Godot without rcedit): product "WBC3 Redux", version 0.1.1.0,
   the unofficial / not-affiliated wording. The version there is set by hand for now; keep it equal to
   `build.ps1 -Version`.
 - Main menu: a red ink "REDUX" stamp over the lower right of the title's "III" (`front_end.gd` `TitleStamp`: our own
@@ -197,6 +197,9 @@ which the prepare pass packs and removes.
      restores `APPDATA` after the export, so an installer started later from the same window sees the real folders.
 5. **Clean test.** Install on a fresh Windows user account (and ideally a machine without Python or Godot), with the GOG
    copy; then a Steam copy if a tester has one. Play a skirmish, save/load, uninstall.
+   2026-11-17, GOG part done: the user installed release v0.1.0 from the GitHub download on a different, fresh PC
+   with their GOG copy, and it worked. The import felt slower than here (not timed; that PC is slower). Still open:
+   a Steam or CD copy, and a timed import on a slower PC to check the "4 to 7 minutes" wording.
 
 ## Distribution
 
@@ -208,7 +211,8 @@ which the prepare pass packs and removes.
 - The installer is unsigned. Started on this machine it raised no warning (hand test); a copy downloaded from the web
   is expected to get Windows SmartScreen's "Windows protected your PC" until the file builds a reputation, so the post
   explains "More info" → "Run anyway". PyInstaller builds are sometimes flagged by antivirus; report false positives
-  if that happens. Neither has been tried with a real download yet (step 5).
+  if that happens. The first real download (step 5, 2026-11-17) installed and worked; no antivirus problem was
+  reported.
 
 ## Open questions
 
@@ -220,6 +224,9 @@ which the prepare pass packs and removes.
 
 ## Status
 
+- 2026-11-20: release v0.1.1 on GitHub (fixes: issues 1, 2, 3, 9, 11 and the first part of 4). Full `-Check` passed;
+  the test build installed silently, converted and packed the data and ran a match without errors.
+- 2026-11-17: release v0.1.0 on GitHub; step 5 done for the GOG copy on a second PC (Steam/CD still open).
 - 2026-11-17: named WBC3 Redux (files, installer, exe properties, save folder); "REDUX" stamp on the main menu.
 - 2026-11-17: the game data ships as one wbc3-data.pck instead of a loose folder; test builds have their own AppId.
 - 2026-11-17: step 4 done (installer built and tested: install, first start, re-import, failure path, uninstall).
