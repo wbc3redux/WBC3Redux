@@ -266,7 +266,9 @@ static func tick(m: Dictionary, time_ms: int, world) -> bool:
 		if x < int(world.width) - 1 and y < int(world.height) - 1: cells.append(Vector2i(x + 1, y + 1))
 		var found: Dictionary = {}
 		for c in cells:
-			var o: Dictionary = world.occupant(c)
+			# Issue 11: at heights 2 and above the cell's flyer comes first (a world with an air layer: combat.gd MissileWorld).
+			var o: Dictionary = world.air_occupant(c) if h >= 2 and world.has_method("air_occupant") else {}
+			if o.is_empty(): o = world.occupant(c)
 			if o.is_empty(): continue
 			# The high-target probe (+0x160 & 0x1000) passes over ground units without the tall bits; the slice has no air layer.
 			if int(m.flags) & 0x1000 and h >= 2 and (o.kind == "other" or (o.kind == "unit" and not bool(o.get("tall", false)))): continue

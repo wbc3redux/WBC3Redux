@@ -76,6 +76,8 @@ func add_unit(type_id: String, cell: Vector2i, owner: int, hero_profile = null) 
 	unit.owner_id = owner
 	unit.base_speed = int(production.rules.definition(type_id).base_speed)
 	unit.navigator = world.nav
+	unit.flying = int(Rules.unit_stats(production.rules.definition(type_id).raw_hex).movement) == 1   # ARM +5 (as main_build.gd add_unit)
+	if unit.flying: unit.movement_type = 1
 	unit.position = world.nav.center(cell)
 	t.root.add_child(unit)
 	world.units.append(unit)
@@ -272,6 +274,29 @@ func run_missile_checks(tree: SceneTree):
 	world.combat.missile_landed.connect(func(info): hits.append(info))
 	run_ms(20000, func(): return hits.size() >= 4)
 	check(f(friend).hp == hp and hits.all(func(i): return not bool(i.hit) or int(i.struck_id) != friend), "no friendly fire")
+	# Issue 11: missiles reach flying units (the Liche's bolt and the Squire's arrow against a Harpy), and a flyer's own
+	# missile reaches a unit on the ground.
+	for shooter_type in ["AUMX", "AHMX"]:
+		new_world(0x0badf00d, 0x16180339)
+		var shooter := add_unit(shooter_type, open_cell + Vector2i(-4, 0), 0)
+		var harpy := add_unit("AAHA", open_cell, 1)
+		check(world.units[harpy].flying, "the Harpy flies")
+		world.combat.auto_acquire = false
+		check(world.combat.order_attack(shooter, "unit", harpy) != false, "%s takes the attack order on a flyer" % shooter_type)
+		var air_hp: int = f(harpy).hp
+		var air_hits: Array = []
+		world.combat.missile_landed.connect(func(info): air_hits.append(info))
+		run_ms(30000, func(): return f(harpy).hp < air_hp or air_hits.size() >= 6)
+		check(f(harpy).hp < air_hp, "issue 11: %s's missile hits the Harpy (hp %d of %d, %s)" % [shooter_type, f(harpy).hp, air_hp,
+			air_hits.map(func(i): return [i.hit, i.get("struck_id", -1), int(i.flags) & 0x1000 != 0])])
+	new_world(0x0badf00d, 0x16180339)
+	var dragon := add_unit("AADU", open_cell + Vector2i(-4, 0), 0)
+	var prey := add_unit("AHKX", open_cell, 1)
+	world.combat.auto_acquire = false
+	world.combat.order_attack(dragon, "unit", prey)
+	var prey_hp: int = f(prey).hp
+	run_ms(30000, func(): return f(prey).hp < prey_hp)
+	check(f(prey).hp < prey_hp or int(f(dragon).stats.range) == 0, "issue 11: a flyer's missile still reaches the ground (hp %d of %d)" % [f(prey).hp, prey_hp])
 
 func _test_xp_and_hero():
 	new_world(0x3c6ef372, 0xa54ff53a)
