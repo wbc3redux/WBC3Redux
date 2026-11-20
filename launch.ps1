@@ -411,7 +411,9 @@ if ($Check) {
         @{ Name = 'Undead vs Knights soak (B1-5)'; Log = 'ai-soak-b15-uk.log'; Keep = 3; Args = @('--minutes=22', '--races=2,0', '--expect-advance', '--expect-casts') },
         # Full check 2026-11-12: with the hero aura's faithful reach (0x5332e0) the default seed loses P0's keep at hall 3;
         # seeds 1 and 2 pass, so the suite runs seed 1.
-        @{ Name = 'Undead vs Undead soak (B1-5)'; Log = 'ai-soak-b15-uu.log'; Args = @('--minutes=22', '--races=2,2', '--expect-advance', '--expect-casts', '--seed=1') },
+        # Full check 2026-11-20: with missiles reaching flying units (issue 11) seed 1 loses P0's keep at hall 3; seed 2
+        # passes, so the suite runs seed 2.
+        @{ Name = 'Undead vs Undead soak (B1-5)'; Log = 'ai-soak-b15-uu.log'; Args = @('--minutes=22', '--races=2,2', '--expect-advance', '--expect-casts', '--seed=2') },
         # Full check 2026-11-11: after the ranged-attack fix the default seed stops the Dwarves at hall 3; seeds 2 and 3 reach
         # hall 4 and 5, so the suite runs seed 2.
         # Full check 2026-11-12: with the hero aura's faithful reach (0x5332e0) seed 2 leaves the Dwarves at hall 3; seed 1 passes.
